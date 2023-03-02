@@ -3,6 +3,6 @@ module com.example.gocircle {
     requires javafx.fxml;
 
 
-    opens com.example.gocircle to javafx.fxml;
-    exports com.example.gocircle;
+    opens com.teamvoid.gocircle to javafx.fxml;
+    exports com.teamvoid.gocircle;
 }
