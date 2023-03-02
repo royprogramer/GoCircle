@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane prefHeight="534.0" prefWidth="904.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teamvoid.gocircle.Register">
+<AnchorPane prefHeight="534.0" prefWidth="904.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teamvoid.gocircle.RegisterController">
    <children>
       <BorderPane prefHeight="534.0" prefWidth="904.0" style="-fx-background-color: #212A32;">
          <left>

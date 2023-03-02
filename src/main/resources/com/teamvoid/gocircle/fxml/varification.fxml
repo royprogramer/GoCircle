@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane prefHeight="385.0" prefWidth="478.0" style="-fx-background-color: #212A32;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teamvoid.gocircle.Varification">
+<AnchorPane prefHeight="385.0" prefWidth="478.0" style="-fx-background-color: #212A32;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teamvoid.gocircle.VarificationController">
    <children>
       <TextField fx:id="opt" layoutX="70.0" layoutY="164.0" prefHeight="35.0" prefWidth="341.0" promptText="code" />
       <Button layoutX="186.0" layoutY="264.0" mnemonicParsing="false" onAction="#varify" prefHeight="33.0" prefWidth="114.0" style="-fx-background-color: #D87348;" text="varify" textFill="WHITE">
