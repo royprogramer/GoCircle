@@ -35,19 +35,17 @@ public class LoginController implements Initializable {
 
 
         Statement statement = connect.createStatement();
-        String strSql="select * from customer_info";
-        ResultSet resultSet= statement.executeQuery(strSql);
+        //String strSql="select * from customer_info";
 
-              while (resultSet.next()) {
-                  System.out.printf(resultSet.getString("Username"));
-              }
+        String verify = "SELECT count(1) FROM students_info WHERE Username = " + "\"" + userName.getText() + "\"" + " AND Password =  " + "\"" + password.getText() + "\"";
+        ResultSet resultSet= statement.executeQuery(verify);
 
+        while (resultSet.next()) {
+            if (resultSet.getInt(1) == 1) {
+                System.out.println("Successful");
+            } else System.out.println("Not successful");
 
-//           if(resultSet.getString("Username").equals(userName.getText())&&resultSet.getString("Password").equals(password.getText()))
-//           {
-//               System.out.println("Successful");
-//           }
-
+        }
 
     }
     @FXML

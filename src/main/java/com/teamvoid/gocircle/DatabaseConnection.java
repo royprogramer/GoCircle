@@ -7,19 +7,19 @@ public class DatabaseConnection {
     public Connection databaseLink;
     public Connection getConnect()
     {
-        String databaseName="gocirle";
+        String databaseName="gocircle";
         String databaseUsername="root";
         String databasePassword="";
-        String url = "jdbc:mysql://localhost:3306/"+databaseName;
+        String url = "jdbc:mysql://localhost/"+databaseName;
         try {
-            Class.forName("com.teamvoid.gocircle.DatabaseConnection");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             databaseLink = DriverManager.getConnection(url,databaseUsername,databasePassword);
 
 
         }
         catch (Exception e)
         {
-            System.out.println("here");
+           e.printStackTrace();
         }
         return databaseLink;
     }
