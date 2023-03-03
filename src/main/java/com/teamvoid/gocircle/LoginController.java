@@ -28,11 +28,15 @@ public class LoginController implements Initializable {
 
 
     @FXML
-    void loginButton(ActionEvent event) throws SQLException, ClassNotFoundException {
+    void loginButton(ActionEvent event) throws SQLException{
+        DatabaseConnection connectNow= new DatabaseConnection();
 
-        Connection connectNow= DriverManager.getConnection("jdbc:mysql://localhost:3306/gocirle","root","");
-        Statement statement = connectNow.createStatement();
-        ResultSet resultSet= statement.executeQuery("select * from customer_info");
+        Connection connect= connectNow.getConnect();
+
+
+        Statement statement = connect.createStatement();
+        String strSql="select * from customer_info";
+        ResultSet resultSet= statement.executeQuery(strSql);
 
               while (resultSet.next()) {
                   System.out.printf(resultSet.getString("Username"));
