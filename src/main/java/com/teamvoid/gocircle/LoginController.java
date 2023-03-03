@@ -14,9 +14,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.*;
 import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
+
 
     @FXML
     private PasswordField password;
@@ -26,7 +28,17 @@ public class LoginController implements Initializable {
 
 
     @FXML
-    void loginButton(ActionEvent event) {
+    void loginButton(ActionEvent event) throws SQLException, ClassNotFoundException {
+
+        Connection connectNow= DriverManager.getConnection("jdbc:mysql://localhost:3306/gocirle","root","");
+        Statement statement = connectNow.createStatement();
+        ResultSet resultSet= statement.executeQuery("select * from customer_info");
+        while (resultSet.next())
+        {
+            System.out.println(resultSet.getString("Username"));
+
+    }
+
 
     }
     @FXML
@@ -34,11 +46,12 @@ public class LoginController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("fxml/register.fxml"));
         Scene scene2 = new Scene(root);
 
-        Stage stage2 = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        Stage stage2 = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         stage2.setScene(scene2);
         stage2.show();
     }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
