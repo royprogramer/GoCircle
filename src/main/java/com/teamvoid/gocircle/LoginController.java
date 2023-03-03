@@ -35,10 +35,11 @@ public class LoginController implements Initializable {
 
 
         Statement statement = connect.createStatement();
-        //String strSql="select * from customer_info";
-
         String verify = "SELECT count(1) FROM students_info WHERE Username = " + "\"" + userName.getText() + "\"" + " AND Password =  " + "\"" + password.getText() + "\"";
+
+
         ResultSet resultSet= statement.executeQuery(verify);
+
 
         while (resultSet.next()) {
             if (resultSet.getInt(1) == 1) {
