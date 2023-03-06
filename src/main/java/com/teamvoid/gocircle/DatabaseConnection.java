@@ -7,10 +7,10 @@ public class DatabaseConnection {
     public Connection databaseLink;
     public Connection getConnect()
     {
-        String databaseName="gocircle";
-        String databaseUsername="root";
-        String databasePassword="";
-        String url = "jdbc:mysql://localhost/"+databaseName;
+        String databaseName="sql7602631";
+        String databaseUsername="sql7602631";
+        String databasePassword="QQulIkHFSv";
+        String url = "jdbc:mysql://sql7.freesqldatabase.com/"+databaseName;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             databaseLink = DriverManager.getConnection(url,databaseUsername,databasePassword);
