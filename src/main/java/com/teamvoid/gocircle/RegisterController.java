@@ -39,7 +39,6 @@ public class RegisterController implements Initializable {
             Connection connect = connectNow.getConnect();
             Statement statement = connect.createStatement();
 
-
             if(!signupUsername.getText().isBlank() && !email.getText().isBlank()) {
                 if(createPassword.getText().equals(confirmPassword.getText())) {
                     String inputInfo = "INSERT INTO `students_info` (`Username`, `Versity_mail`, `Password`) VALUES ('" + signupUsername.getText() + "', '" + email.getText() + "', '" + createPassword.getText() + "')";
