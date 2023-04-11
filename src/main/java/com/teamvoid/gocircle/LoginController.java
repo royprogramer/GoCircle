@@ -25,13 +25,12 @@ public class LoginController implements Initializable {
 
     @FXML
     private TextField userName;
+    Connection connect;
 
 
     @FXML
-    void loginButton(ActionEvent event) throws SQLException{
-        DatabaseConnection connectNow= new DatabaseConnection();
+    void loginButton(ActionEvent event) throws SQLException, IOException {
 
-        Connection connect= connectNow.getConnect();
 
 
         Statement statement = connect.createStatement();
@@ -39,14 +38,20 @@ public class LoginController implements Initializable {
 
 
         ResultSet resultSet= statement.executeQuery(verify);
-
-
         while (resultSet.next()) {
             if (resultSet.getInt(1) == 1) {
-                System.out.println("Successful");
+                Parent root = FXMLLoader.load(getClass().getResource("fxml/dashboard.fxml"));
+                Scene scene3 = new Scene(root);
+
+                Stage stage3 = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                stage3.setScene(scene3);
+                stage3.show();
+
             } else System.out.println("Not successful");
 
         }
+
 
     }
     @FXML
@@ -65,6 +70,9 @@ public class LoginController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         userName.setFocusTraversable(false);
         password.setFocusTraversable(false);
+        DatabaseConnection connectNow= new DatabaseConnection();
+
+        connect= connectNow.getConnect();
     }
 }
 

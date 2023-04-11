@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+
+<AnchorPane fx:id="scene" prefHeight="770.0" prefWidth="1200.0" style="-fx-border-radius: 40;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teamvoid.gocircle.FrontPageController">
+   <children>
+      <ImageView fitHeight="770.0" fitWidth="1200.0">
+         <image>
+            <Image url="@../Image/Frame1.png" />
+         </image>
+      </ImageView>
+      <Circle fx:id="ball1" layoutX="635.0" layoutY="330.0" opacity="0.2" radius="92.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.09661305695772171" green="0.2398168444633484" blue="0.34210526943206787" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.2932330827067669">
+                     <color>
+                        <Color red="0.09661305695772171" green="0.2398168444633484" blue="0.34210526943206787" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.44115495681762695" green="0.6710526347160339" blue="0.5637670755386353" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
+      </Circle>
+      <Circle fx:id="ball2" layoutX="626.0" layoutY="97.0" opacity="0.59" radius="83.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.08223684132099152" green="0.22785088419914246" blue="0.3552631437778473" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.11654135338345864">
+                     <color>
+                        <Color red="0.08223684132099152" green="0.22785088419914246" blue="0.3552631437778473" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.8157894611358643" green="0.41519656777381897" blue="0.2568226158618927" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
+      </Circle>
+      <Circle fx:id="ball3" layoutX="447.0" layoutY="631.0" opacity="0.52" radius="139.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.22344054281711578" green="0.30076348781585693" blue="0.3684210479259491" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.007518796992481203">
+                     <color>
+                        <Color red="0.02631578966975212" green="0.1855263113975525" blue="0.31578946113586426" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.7763158082962036" green="0.4208637773990631" blue="0.28033626079559326" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
+      </Circle>
+      <Circle fx:id="ball4" layoutX="126.0" layoutY="126.0" opacity="0.22" radius="112.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.17909356951713562" green="0.39076510071754456" blue="0.5526315569877625" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.44115495681762695" green="0.6710526347160339" blue="0.5637670755386353" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
+      </Circle>
+      <Circle fx:id="ball6" layoutX="955.0" layoutY="180.0" opacity="0.2" radius="74.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.6485999822616577" green="0.8407999873161316" blue="0.9399999976158142" opacity="0.9100000262260437" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.31122076511383057" green="0.5131579041481018" blue="0.35160818696022034" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
+      </Circle>
+      <Circle fx:id="ball5" layoutX="126.0" layoutY="464.0" opacity="0.2" radius="79.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.17909356951713562" green="0.39076510071754456" blue="0.5526315569877625" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.44115495681762695" green="0.6710526347160339" blue="0.5637670755386353" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
+      </Circle>
+      <Circle fx:id="ball7" layoutX="821.0" layoutY="679.0" opacity="0.2" radius="67.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.17909356951713562" green="0.39076510071754456" blue="0.5526315569877625" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.03383458646616541">
+                     <color>
+                        <Color red="0.17909356951713562" green="0.39076510071754456" blue="0.5526315569877625" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.4422514736652374" green="0.7236841917037964" blue="0.5923489332199097" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
+      </Circle>
+      <Circle fx:id="ball8" layoutX="1094.0" layoutY="492.0" opacity="0.62" radius="92.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8470588326454163" green="0.45098039507865906" blue="0.2823529541492462" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.8684210526315789">
+                     <color>
+                        <Color red="0.12999512255191803" green="0.2150503545999527" blue="0.28947368264198303" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.12999512255191803" green="0.2150503545999527" blue="0.28947368264198303" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
+      </Circle>
+   </children>
+</AnchorPane>

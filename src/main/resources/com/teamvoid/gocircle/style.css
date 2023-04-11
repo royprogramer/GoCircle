@@ -1,4 +1,22 @@
 .backgroundColor{
     -fx-background-color: linear-gradient(to top, #D87348, #5F7A93);
-
 }
+.backgroundColor2{
+    -fx-background-color: linear-gradient(to top, #D87348, #D08D62);
+}
+.backgroundColor3{
+    -fx-background-color: linear-gradient(to top, #E4AE54, #E1BC7D);
+}
+.backgroundColor4{
+    -fx-background-color: linear-gradient(to right, #BCB1A2, #D5CEA8);
+}
+.backgroundColor5{
+    -fx-background-color: linear-gradient(to right, #B9CACA, #FEFBF7);
+}
+.buttonBackground1{
+    -fx-background-color: linear-gradient(to top, #9F7F51, #CBAF85);
+}
+.buttonBackground2{
+    -fx-background-color: linear-gradient(to top, #56816E, #89A999);
+}
+
