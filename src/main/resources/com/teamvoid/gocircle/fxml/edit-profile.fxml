@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teamvoid.gocircle.EditProfile" style="-fx-background-color: #F5F5F5;">
+    <children>
+        <VBox layoutX="32.0" layoutY="41.0" spacing="10.0" style="-fx-background-color: white; -fx-padding: 20px; -fx-border-color: #A9A9A9; -fx-border-width: 1px; -fx-border-radius: 5px;">
+            <Label text="Profile Information" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #5F9EA0;" />
+            <Label text="Name" style="-fx-font-size: 14px; -fx-text-fill: #696969;" />
+            <TextField fx:id="nameField" style="-fx-font-size: 14px; -fx-prompt-text-fill: #A9A9A9; -fx-border-color: #A9A9A9; -fx-border-width: 1px; -fx-border-radius: 3px;" />
+            <Label text="Username" style="-fx-font-size: 14px; -fx-text-fill: #696969;" />
+            <TextField fx:id="usernameField" style="-fx-font-size: 14px; -fx-prompt-text-fill: #A9A9A9; -fx-border-color: #A9A9A9; -fx-border-width: 1px; -fx-border-radius: 3px;" />
+            <Label text="Bio" style="-fx-font-size: 14px; -fx-text-fill: #696969;" />
+            <TextField fx:id="bioField" style="-fx-font-size: 14px; -fx-prompt-text-fill: #A9A9A9; -fx-border-color: #A9A9A9; -fx-border-width: 1px; -fx-border-radius: 3px;" />
+            <Label text="Gender" style="-fx-font-size: 14px; -fx-text-fill: #696969;" />
+            <ComboBox fx:id="genderComboBox" prefWidth="150.0" style="-fx-font-size: 14px; -fx-prompt-text-fill: #A9A9A9; -fx-border-color: #A9A9A9; -fx-border-width: 1px; -fx-border-radius: 3px;">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Male" />
+                        <String fx:value="Female" />
+                        <String fx:value="Other" />
+                    </FXCollections>
+                </items>
+            </ComboBox>
+            <Button fx:id="saveButton" text="Save" onAction="#handleSaveButtonClick" style="-fx-background-color: #5F9EA0; -fx-text-fill: white; -fx-font-size: 14px; -fx-border-color: #A9A9A9; -fx-border-width: 1px;
+-fx-border-radius: 3px;" />
+        </VBox>
+    </children>
+</AnchorPane>
