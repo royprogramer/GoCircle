@@ -21,10 +21,7 @@
          </image>
       </ImageView>
       <Pane layoutX="616.0" layoutY="688.0" prefHeight="50.0" prefWidth="383.0" />
-      <Pane layoutX="738.0" layoutY="46.0" prefHeight="278.0" prefWidth="227.0" style="-fx-background-radius: 20;">
-         <children>
-            <ImageView fx:id="profilePic" fitHeight="278.0" fitWidth="227.0" pickOnBounds="true" preserveRatio="true" />
-         </children></Pane>
+      <Pane layoutX="738.0" layoutY="46.0" prefHeight="278.0" prefWidth="227.0" style="-fx-background-radius: 20;" />
       <Label layoutX="467.0" layoutY="17.0" prefHeight="52.0" prefWidth="193.0" text="goCircle">
          <font>
             <Font name="Concert One" size="55.0" />
@@ -71,11 +68,6 @@
       <ImageView fitHeight="79.0" fitWidth="102.0" layoutX="391.0" layoutY="122.0">
          <image>
             <Image url="@../Image/Rectangle6.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="30.0" fitWidth="32.0" layoutX="430.0" layoutY="139.0">
-         <image>
-            <Image url="@../../../../../../../../../Downloads/icons8-foam-bubbles-90.png" />
          </image>
       </ImageView>
       <Label fx:id="circleName" layoutX="487.0" layoutY="134.0" prefHeight="39.0" prefWidth="227.0" text="Your Circle" textFill="#365d7aba" underline="true">
@@ -162,11 +154,6 @@
          </font>
       </JFXButton>
       <Pane layoutX="422.0" layoutY="324.0" prefHeight="39.0" prefWidth="40.0" />
-      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="503.0" layoutY="348.0">
-         <image>
-            <Image url="@../../../../../../../../../Downloads/icons8-edit-48.png" />
-         </image>
-      </ImageView>
       <ImageView fitHeight="50.0" fitWidth="51.0" layoutX="123.0" layoutY="712.0" onMouseClicked="#goBack">
          <image>
             <Image url="@../Image/icons8-back-arrow-66.png" />
@@ -187,21 +174,16 @@
             <DropShadow height="12.1" radius="4.0675" spread="0.1" width="6.17" />
          </effect>
       </ImageView>
-      <Pane layoutX="1107.0" layoutY="23.0" prefHeight="30.0" prefWidth="82.0">
-         <children>
-            <ImageView fitHeight="30.0" fitWidth="32.0">
-               <image>
-                  <Image url="@../Image/icons8-minimize-keep-down-reduce-button-decrease-screen-size-shrink-96.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="30.0" fitWidth="32.0" layoutX="45.0">
-               <image>
-                  <Image url="@../Image/icons8-cancel-100.png" />
-               </image>
-            </ImageView>
-            <Button layoutX="45.0" mnemonicParsing="false" opacity="0.36" prefHeight="30.0" prefWidth="32.0" style="-fx-background-radius: 50;" />
-            <Button layoutX="1.0" mnemonicParsing="false" opacity="0.3" prefHeight="28.0" prefWidth="30.0" style="-fx-background-radius: 5;" />
-         </children>
-      </Pane>
+      <Pane layoutX="1107.0" layoutY="23.0" prefHeight="30.0" prefWidth="82.0" />
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="503.0" layoutY="348.0">
+         <image>
+            <Image url="@../Image/icons8-edit-48.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="30.0" fitWidth="32.0" layoutX="429.0" layoutY="138.0">
+         <image>
+            <Image url="@../Image/icons8-foam-bubbles-90.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
