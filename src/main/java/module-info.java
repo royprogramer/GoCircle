@@ -4,6 +4,7 @@ module com.example.gocircle {
     requires io.github.cdimascio.dotenv.java;
     requires java.mail;
     requires java.sql;
+    requires com.jfoenix;
 
 
     opens com.teamvoid.gocircle to javafx.fxml;

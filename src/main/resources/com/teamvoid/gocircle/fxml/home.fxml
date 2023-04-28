@@ -17,14 +17,9 @@
 
 <AnchorPane prefHeight="534.0" prefWidth="904.0" style="-fx-background-color: #ffff; -fx-border-radius: 40;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teamvoid.gocircle.LoginController">
     <children>
-      <ImageView fitHeight="691.0" fitWidth="585.0" layoutX="-117.0" layoutY="-157.0">
-         <image>
-            <Image url="@../Image/Frame1.png" />
-         </image>
-      </ImageView>
         <BorderPane prefHeight="534.0" prefWidth="908.0" style="-fx-border-radius: 40;">
          <center>
-                <Pane prefHeight="614.0" prefWidth="940.0" style="-fx-border-radius: 40;" BorderPane.alignment="CENTER">
+                <Pane prefHeight="614.0" prefWidth="940.0" style="-fx-border-radius: 40;" styleClass="backgroundColor1" stylesheets="@../style.css" BorderPane.alignment="CENTER">
                     <children>
                         <Pane layoutX="468.0" opacity="0.87" prefHeight="534.0" prefWidth="442.0" styleClass="backgroundColor" stylesheets="@../style.css">
                             <opaqueInsets>

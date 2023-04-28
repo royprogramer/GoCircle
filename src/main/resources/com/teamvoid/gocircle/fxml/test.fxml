@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+
+<AnchorPane fx:id="rootpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="770.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teamvoid.gocircle.TestController">
+   <children>
+      <Circle fx:id="Circle" layoutX="534.0" layoutY="465.0" radius="844.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+         <fill>
+            <LinearGradient endX="0.8952380952380953" endY="0.661904761904762" startX="0.3952380952380952" startY="0.49523809523809526">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.01315789483487606" green="0.013020833022892475" blue="0.012975146062672138" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.10855263471603394" green="0.4016447365283966" blue="0.43421053886413574" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Circle>
+      <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="742.0" prefWidth="1172.0" style="-fx-background-color: #000000;">
+         <children>
+            <HBox alignment="CENTER_RIGHT" layoutX="1111.0" layoutY="9.0" prefHeight="27.0" prefWidth="50.0">
+               <children>
+                  <Pane prefHeight="52.0" prefWidth="25.0" style="-fx-background-radius: 5;" styleClass="close-btn2" stylesheets="@../style.css">
+                     <padding>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                     </padding>
+                     <children>
+                        <ImageView fitHeight="41.0" fitWidth="23.0" layoutX="1.0" layoutY="-3.0" onMouseClicked="#minimize">
+                           <image>
+                              <Image url="@../Image/icons8-subtract-64.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="52.0" prefWidth="25.0" style="-fx-background-radius: 5;" styleClass="close-btn2" stylesheets="@../style.css">
+                     <children>
+                        <ImageView accessibleRole="BUTTON" fitHeight="20.0" fitWidth="21.0" layoutX="2.0" layoutY="3.0" onMouseClicked="#close">
+                           <image>
+                              <Image url="@../Image/icons8-close-60.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                        </ImageView>
+                     </children>
+                     <padding>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                     </padding>
+                  </Pane>
+               </children>
+            </HBox>
+            <ImageView fitHeight="317.0" fitWidth="293.0">
+               <image>
+                  <Image url="@../Image/Group20.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="359.0" fitWidth="261.0" layoutX="911.0" layoutY="383.0">
+               <image>
+                  <Image url="@../Image/Group19.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+      <ImageView fitHeight="543.0" fitWidth="540.0" layoutX="330.0" layoutY="113.0">
+         <image>
+            <Image url="@../Image/circle54.gif" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
