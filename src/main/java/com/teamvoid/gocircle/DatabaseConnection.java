@@ -16,8 +16,6 @@ public class DatabaseConnection {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             databaseLink = DriverManager.getConnection(url,databaseUsername,databasePassword);
-
-
         }
         catch (Exception e)
         {
