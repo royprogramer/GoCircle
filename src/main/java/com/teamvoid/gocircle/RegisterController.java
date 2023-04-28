@@ -118,7 +118,6 @@ public class RegisterController implements Initializable {
 
     public void varify(MouseEvent mouseEvent) {
         try{
-
             if(verify_code.getText().equals(verificationCode))
             {
                 Statement statement = connect.createStatement();

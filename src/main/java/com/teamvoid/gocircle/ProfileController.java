@@ -1,6 +1,6 @@
 package com.teamvoid.gocircle;
 
-import com.jfoenix.controls.JFXButton;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -10,8 +10,6 @@ import javafx.scene.layout.Pane;
 
 public class ProfileController {
 
-    @FXML
-    private JFXButton CircleListbtn;
 
     @FXML
     private Label Name;
@@ -33,9 +31,6 @@ public class ProfileController {
 
     @FXML
     private Label departmentnameshow;
-
-    @FXML
-    private JFXButton followingbtn;
 
     @FXML
     private Label learned;

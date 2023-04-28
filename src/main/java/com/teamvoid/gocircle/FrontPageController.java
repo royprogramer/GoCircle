@@ -1,28 +1,33 @@
 package com.teamvoid.gocircle;
 
-import javafx.fxml.FXML;
-import javafx.scene.shape.Circle;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Bounds;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
+import javafx.scene.text.Text;
 import javafx.util.Duration;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class FrontPageController implements Initializable{
+public class FrontPageController implements Initializable {
 
     @FXML
-    private AnchorPane scene;
-    @FXML
     private Circle ball1;
+
     @FXML
     private Circle ball2;
 
@@ -43,6 +48,193 @@ public class FrontPageController implements Initializable{
 
     @FXML
     private Circle ball8;
+
+    @FXML
+    private PasswordField confirmPassword;
+
+    @FXML
+    private PasswordField createPassword;
+
+    @FXML
+    private TextField email;
+
+    @FXML
+    private ImageView gif;
+
+    @FXML
+    private AnchorPane layer1;
+
+    @FXML
+    private AnchorPane layer2;
+
+    @FXML
+    private ImageView locklogo;
+
+    @FXML
+    private Label loginLabel;
+
+    @FXML
+    private Button loginbtn;
+
+    @FXML
+    private Label loginpageLabel;
+
+    @FXML
+    private PasswordField password;
+
+    @FXML
+    private ImageView profilelogo;
+
+    @FXML
+    private AnchorPane scene;
+
+    @FXML
+    private Text signinLabel;
+
+    @FXML
+    private Text signupLabel;
+
+    @FXML
+    private Label signupPageswitch;
+
+    @FXML
+    private TextField signupUsername;
+
+    @FXML
+    private Button signupbtn;
+
+    @FXML
+    private Label singuppageLabel;
+
+    @FXML
+    private TextField userName;
+
+    @FXML
+    void loginButton(ActionEvent event) {
+
+    }
+
+    @FXML
+    void loginLable(MouseEvent event) {
+        TranslateTransition slide = new TranslateTransition();
+        TranslateTransition slide2 = new TranslateTransition();
+        TranslateTransition slide3 = new TranslateTransition();
+
+        slide2.setDuration(Duration.seconds(1));
+        slide2.setNode(layer2);
+
+        slide2.setToX(0);
+        slide2.play();
+
+        layer2.setTranslateX(-452);
+
+        slide3.setDuration(Duration.seconds(1));
+        slide3.setNode(gif);
+
+        slide3.setToX(0);
+        slide3.play();
+
+        gif.setTranslateX(-452);
+
+        slide.setDuration(Duration.seconds(1));
+        slide.setNode(layer1);
+
+        slide.setToX(0);
+        slide.play();
+
+        layer1.setTranslateX(452);
+        slide2.setOnFinished((e ->{
+
+        }));
+
+        signinLabel.setVisible(true);
+        userName.setVisible(true);
+        password.setVisible(true);
+        profilelogo.setVisible(true);
+        locklogo.setVisible(true);
+        loginbtn.setVisible(true);
+        loginpageLabel.setVisible(true);
+        signupPageswitch.setVisible(true);
+
+        userName.setFocusTraversable(false);
+        password.setFocusTraversable(false);
+
+        signupLabel.setVisible(false);
+        signupUsername.setVisible(false);
+        email.setVisible(false);
+        createPassword.setVisible(false);
+        confirmPassword.setVisible(false);
+        singuppageLabel.setVisible(false);
+        loginLabel.setVisible(false);
+        signupbtn.setVisible(false);
+
+        signupUsername.setFocusTraversable(false);
+        email.setFocusTraversable(false);
+        confirmPassword.setFocusTraversable(false);
+        createPassword.setFocusTraversable(false);
+
+
+    }
+
+    @FXML
+    void signUpButton(ActionEvent event) {
+
+    }
+
+    @FXML
+    void signUpLable(MouseEvent event) {
+        TranslateTransition slide = new TranslateTransition();
+        TranslateTransition slide2 = new TranslateTransition();
+        TranslateTransition slide3 = new TranslateTransition();
+        slide.setDuration(Duration.seconds(1));
+        slide.setNode(layer1);
+
+        slide.setToX(452);
+        slide.play();
+
+        layer1.setTranslateX(-452);
+
+        slide2.setDuration(Duration.seconds(1));
+        slide2.setNode(layer2);
+
+        slide2.setToX(-452);
+        slide2.play();
+
+        layer2.setTranslateX(452);
+
+        slide3.setDuration(Duration.seconds(1));
+        slide3.setNode(gif);
+
+        slide3.setToX(-452);
+        slide3.play();
+
+        gif.setTranslateX(452);
+
+        slide2.setOnFinished((e ->{
+
+        }));
+
+        signinLabel.setVisible(false);
+        userName.setVisible(false);
+        password.setVisible(false);
+        profilelogo.setVisible(false);
+        locklogo.setVisible(false);
+        loginbtn.setVisible(false);
+        loginpageLabel.setVisible(false);
+        signupPageswitch.setVisible(false);
+
+        signupLabel.setVisible(true);
+        signupUsername.setVisible(true);
+        email.setVisible(true);
+        createPassword.setVisible(true);
+        confirmPassword.setVisible(true);
+        singuppageLabel.setVisible(true);
+        loginLabel.setVisible(true);
+        signupbtn.setVisible(true);
+
+
+    }
+
     Timeline timeline = new Timeline(new KeyFrame(Duration.millis(15), new EventHandler<ActionEvent>() {
 
         double deltaX = 2;
@@ -196,6 +388,24 @@ public class FrontPageController implements Initializable{
     public void initialize(URL url, ResourceBundle resourceBundle) {
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
+
+        userName.setFocusTraversable(false);
+        password.setFocusTraversable(false);
+
+        signupUsername.setFocusTraversable(false);
+        email.setFocusTraversable(false);
+        confirmPassword.setFocusTraversable(false);
+        createPassword.setFocusTraversable(false);
+
+        signupLabel.setVisible(false);
+        signupUsername.setVisible(false);
+        email.setVisible(false);
+        createPassword.setVisible(false);
+        confirmPassword.setVisible(false);
+        singuppageLabel.setVisible(false);
+        loginLabel.setVisible(false);
+        signupbtn.setVisible(false);
+
     }
 
 }

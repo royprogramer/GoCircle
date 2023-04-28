@@ -20,26 +20,7 @@
             <Image url="@../Image/Frame2.png" />
          </image>
       </ImageView>
-      <Pane layoutX="616.0" layoutY="688.0" prefHeight="50.0" prefWidth="383.0">
-         <children>
-            <JFXButton fx:id="followingbtn" buttonType="RAISED" layoutX="218.0" layoutY="1.0" prefHeight="40.0" prefWidth="164.0" ripplerFill="WHITE" style="-fx-background-radius: 10;" styleClass="buttonBackground2" stylesheets="@../style.css" text="following" textFill="WHITE">
-               <effect>
-                  <DropShadow height="26.92" radius="12.9025" spread="0.11" width="26.69" />
-               </effect>
-               <font>
-                  <Font name="Concert One" size="25.0" />
-               </font>
-            </JFXButton>
-            <JFXButton fx:id="CircleListbtn" buttonType="RAISED" layoutX="-8.0" layoutY="1.0" prefHeight="39.0" prefWidth="164.0" style="-fx-background-radius: 10;" styleClass="backgroundColor2" stylesheets="@../style.css" text="Circle List" textFill="WHITE">
-               <effect>
-                  <DropShadow blurType="GAUSSIAN" height="43.24" radius="20.0075" spread="0.17" width="38.79" />
-               </effect>
-               <font>
-                  <Font name="Concert One" size="25.0" />
-               </font>
-            </JFXButton>
-         </children>
-      </Pane>
+      <Pane layoutX="616.0" layoutY="688.0" prefHeight="50.0" prefWidth="383.0" />
       <Pane layoutX="738.0" layoutY="46.0" prefHeight="278.0" prefWidth="227.0" style="-fx-background-radius: 20;">
          <children>
             <ImageView fx:id="profilePic" fitHeight="278.0" fitWidth="227.0" pickOnBounds="true" preserveRatio="true" />

@@ -16,22 +16,9 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="770.0" prefWidth="1200.0" style="-fx-background-color: #212A32;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teamvoid.gocircle.DashboardController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="770.0" prefWidth="1200.0" styleClass="backgroundColor1" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teamvoid.gocircle.DashboardController">
    <children>
       <HBox prefHeight="82.0" prefWidth="1200.0" />
-      <ImageView fitHeight="770.0" fitWidth="1200.0">
-         <image>
-            <Image url="@../Image/Frame1.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="770.0" fitWidth="1200.0">
-         <image>
-            <Image url="@../Image/Frame1.png" />
-         </image>
-         <effect>
-            <DropShadow height="1.0" radius="0.0" width="0.0" />
-         </effect>
-      </ImageView>
       <Pane layoutY="100.0" prefHeight="671.0" prefWidth="222.0" style="-fx-background-radius: 20;" styleClass="backgroundColor2" stylesheets="@../style.css">
          <children>
             <Pane prefHeight="671.0" prefWidth="75.0" styleClass="backgroundColor4" stylesheets="@../style.css">

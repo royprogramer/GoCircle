@@ -9,13 +9,18 @@ import javafx.stage.StageStyle;
 import java.io.IOException;
 
 public class Main extends Application {
+    public static Stage stage = null;
     @Override
     public void start(Stage stage) throws IOException {
-//        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/home.fxml"));
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/frontPage.fxml"));
+
+        this.stage = stage;
+        //FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/home.fxml"));
+     // FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/frontPage.fxml"));
+       // FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/dfg.fxml"));
+       FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/dfg.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
-        stage.initStyle(StageStyle.TRANSPARENT);
+        stage.initStyle(StageStyle.UNDECORATED);
 
 
         stage.show();
