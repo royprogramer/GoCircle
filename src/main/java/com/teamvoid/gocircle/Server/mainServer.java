@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 public class mainServer extends Application {
     public void start(Stage stage) throws Exception {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/serverScreen.fxml"));
+      //  FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/serverScreen.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
 

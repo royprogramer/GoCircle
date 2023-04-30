@@ -178,7 +178,7 @@ public class LoginregiController implements Initializable {
         ResultSet resultSet= statement.executeQuery(verify);
         while (resultSet.next()) {
             if (resultSet.getInt(1) == 1) {
-                Parent root = FXMLLoader.load(getClass().getResource("fxml/dashboard.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("fxml/dboard.fxml"));
                 Scene scene3 = new Scene(root);
 
                 Stage stage3 = (Stage) ((Node) event.getSource()).getScene().getWindow();

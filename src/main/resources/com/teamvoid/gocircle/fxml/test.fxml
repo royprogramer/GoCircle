@@ -25,14 +25,14 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="0.10855263471603394" green="0.4016447365283966" blue="0.43421053886413574" />
+                        <Color red="0.2235294133424759" green="0.1411764770746231" blue="0.47058823704719543" />
                      </color>
                   </Stop>
                </stops>
             </LinearGradient>
          </fill>
       </Circle>
-      <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="742.0" prefWidth="1172.0" style="-fx-background-color: #000000;">
+      <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="742.0" prefWidth="1172.0" style="-fx-background-color: #000000; -fx-background-radius: 15;">
          <children>
             <HBox alignment="CENTER_RIGHT" layoutX="1111.0" layoutY="9.0" prefHeight="27.0" prefWidth="50.0">
                <children>
