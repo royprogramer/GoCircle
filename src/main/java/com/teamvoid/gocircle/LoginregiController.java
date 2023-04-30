@@ -5,6 +5,7 @@ import javafx.animation.Animation;
 import javafx.animation.Interpolator;
 import javafx.animation.RotateTransition;
 import javafx.animation.TranslateTransition;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -122,7 +123,6 @@ public class LoginregiController implements Initializable {
     static String versityMail;
     static String passWord;
     EmailVerification emailVerification;
-
 
     @FXML
     void close(MouseEvent event) {

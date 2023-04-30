@@ -25,7 +25,14 @@ public class TestController implements Initializable {
     private Circle Circle;
     @FXML
     private AnchorPane rootpane;
+    private Stage primaryStage;
+    public Stage getPrimaryStage() {
+        return primaryStage;
+    }
 
+    public void setPrimaryStage(Stage primaryStage) {
+        this.primaryStage = primaryStage;
+    }
     @FXML
     void close(MouseEvent event) {
         System.exit(0);
@@ -39,12 +46,15 @@ public class TestController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        Platform.runLater(()->{
+            Main.enableMove(Circle.getScene(),primaryStage);
+        });
         new SplashScreen().start();
 
         RotateTransition rotateTransition = new RotateTransition();
         rotateTransition.setAxis(Rotate.Z_AXIS);
         rotateTransition.setByAngle(360);
-        rotateTransition.setCycleCount(1000);
+        rotateTransition.setCycleCount(100);
         rotateTransition.setDuration(Duration.millis(1300));
         rotateTransition.setNode(Circle);
         rotateTransition.play();
@@ -61,7 +71,7 @@ public class TestController implements Initializable {
                     @Override
                     public void run() {
                         Parent root = null;
-                        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/dfg.fxml"));
+                        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/dfg.fxml"));
                         Scene scene = null;
                         try {
                             scene = new Scene(fxmlLoader.load());
