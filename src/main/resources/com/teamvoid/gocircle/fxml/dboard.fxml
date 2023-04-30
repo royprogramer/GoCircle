@@ -157,7 +157,7 @@
                         <Pane prefHeight="71.0" prefWidth="255.0" HBox.hgrow="ALWAYS" />
                         <Pane prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <Pane layoutX="111.0" layoutY="11.0" prefHeight="29.0" prefWidth="25.0" style="-fx-background-radius: 5;" styleClass="close-btn2" stylesheets="@../style.css">
+                              <Pane layoutX="111.0" layoutY="11.0" onMouseClicked="#minimize" prefHeight="29.0" prefWidth="25.0" style="-fx-background-radius: 5;" styleClass="close-btn2" stylesheets="@../style.css">
                                  <padding>
                                     <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                                  </padding>
@@ -169,7 +169,7 @@
                                     </ImageView>
                                  </children>
                               </Pane>
-                              <Pane layoutX="139.0" layoutY="11.0" prefHeight="27.0" prefWidth="25.0" style="-fx-background-radius: 5;" styleClass="close-btn2" stylesheets="@../style.css">
+                              <Pane layoutX="139.0" layoutY="11.0" onMouseClicked="#close" prefHeight="27.0" prefWidth="25.0" style="-fx-background-radius: 5;" styleClass="close-btn2" stylesheets="@../style.css">
                                  <children>
                                     <ImageView accessibleRole="BUTTON" fitHeight="20.0" fitWidth="21.0" layoutX="2.0" layoutY="3.0" onMouseClicked="#close">
                                        <image>
@@ -197,7 +197,7 @@
                <center>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 10;" BorderPane.alignment="CENTER">
                      <children>
-                        <StackPane layoutX="280.0" layoutY="200.0" prefHeight="150.0" prefWidth="200.0" style="-fx-background-radius: 15 15 0 0;" stylesheets="@../style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <StackPane fx:id="changepane" layoutX="280.0" layoutY="200.0" prefHeight="150.0" prefWidth="200.0" style="-fx-background-radius: 15 15 0 0;" stylesheets="@../style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                      </children>
                   </AnchorPane>
                </center>

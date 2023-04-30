@@ -55,7 +55,7 @@ public class TestController implements Initializable {
         @Override
         public void run() {
             try {
-                Thread.sleep(21000);
+                Thread.sleep(9800);
 
                 Platform.runLater(new Runnable() {
                     @Override
