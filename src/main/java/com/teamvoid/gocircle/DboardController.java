@@ -4,20 +4,26 @@ import com.jfoenix.controls.JFXButton;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class DboardController implements Initializable {
     @FXML
     private StackPane changepane;
-    
+
     @FXML
     private JFXButton circlebtn;
 
@@ -43,6 +49,30 @@ public class DboardController implements Initializable {
     private JFXButton studybtn;
     @FXML
     private ImageView menueicon;
+
+    @FXML
+    private VBox p1;
+    @FXML
+    void logout(MouseEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("fxml/dfg.fxml"));
+        Scene scene1 = new Scene(root);
+        Stage stage1 = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage1.setScene(scene1);
+        stage1.show();
+
+    }
+    @FXML
+    void chaticon(MouseEvent event) throws IOException {
+        Parent fxml = FXMLLoader.load(getClass().getResource("fxml/chatbox.fxml"));
+        changepane.getChildren().removeAll();
+        changepane.getChildren().setAll(fxml);
+
+    }
+
+    @FXML
+    void createpost(MouseEvent event) {
+
+    }
     @FXML
     void circlebutton(ActionEvent event) {
 
@@ -115,6 +145,7 @@ public class DboardController implements Initializable {
 
         menueicon.setVisible(true);
         menueicon2.setVisible(false);
+        p1.setVisible(true);
 
     }
 
@@ -128,6 +159,7 @@ public class DboardController implements Initializable {
         studybtn.setVisible(false);
         keepbtn.setVisible(false);
         menueicon2.setVisible(false);
+
 
     }
 }

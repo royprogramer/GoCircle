@@ -15,11 +15,11 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="770.0" prefWidth="1200.0" style="-fx-background-color: #00000;" styleClass="backgroundColor8" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teamvoid.gocircle.DboardController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="770.0" prefWidth="1200.0" styleClass="backgroundColor8" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teamvoid.gocircle.DboardController">
    <children>
       <BorderPane prefHeight="770.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
-            <BorderPane prefHeight="770.0" prefWidth="202.0" BorderPane.alignment="CENTER">
+            <BorderPane prefHeight="770.0" prefWidth="207.0" BorderPane.alignment="CENTER">
                <left>
                   <AnchorPane prefHeight="770.0" prefWidth="160.0" style="-fx-background-color: #2b283e;" BorderPane.alignment="CENTER">
                      <children>
@@ -192,12 +192,57 @@
                      </padding></HBox>
                </top>
                <right>
-                  <BorderPane prefHeight="699.0" prefWidth="213.0" BorderPane.alignment="CENTER" />
+                  <BorderPane prefHeight="696.0" prefWidth="75.0" BorderPane.alignment="CENTER">
+                     <center>
+                        <AnchorPane prefHeight="696.0" prefWidth="150.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox layoutX="1.0" layoutY="237.0" prefHeight="696.0" prefWidth="150.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <VBox prefHeight="200.0" prefWidth="75.0" spacing="50.0" style="-fx-background-color: #2b283e;">
+                                       <children>
+                                          <Pane onMouseClicked="#chaticon" prefHeight="52.0" prefWidth="55.0" style="-fx-background-radius: 50;" styleClass="close-btn3" stylesheets="@../style.css">
+                                             <children>
+                                                <ImageView fitHeight="35.0" fitWidth="31.0" layoutX="12.0" layoutY="9.0">
+                                                   <image>
+                                                      <Image url="@../Image/icons8-email-64.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </Pane>
+                                          <Pane layoutX="20.0" layoutY="30.0" onMouseClicked="#createpost" prefHeight="52.0" prefWidth="55.0" style="-fx-background-radius: 50;" styleClass="close-btn3" stylesheets="@../style.css">
+                                             <children>
+                                                <ImageView fitHeight="30.0" fitWidth="31.0" layoutX="12.0" layoutY="11.0">
+                                                   <image>
+                                                      <Image url="@../Image/icons8-add-48.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </Pane>
+                                          <Pane prefHeight="324.0" prefWidth="55.0" />
+                                          <Pane onMouseClicked="#logout" prefHeight="52.0" prefWidth="55.0" style="-fx-background-radius: 50;" styleClass="close-btn3" stylesheets="@../style.css">
+                                             <children>
+                                                <ImageView fitHeight="34.0" fitWidth="36.0" layoutX="13.0" layoutY="9.0">
+                                                   <image>
+                                                      <Image url="@../Image/icons8-logout-64.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="50.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                     </center></BorderPane>
                </right>
                <center>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 10;" BorderPane.alignment="CENTER">
                      <children>
-                        <StackPane fx:id="changepane" layoutX="280.0" layoutY="200.0" prefHeight="150.0" prefWidth="200.0" style="-fx-background-radius: 15 15 0 0;" stylesheets="@../style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <StackPane fx:id="changepane" layoutX="280.0" layoutY="200.0" prefHeight="150.0" prefWidth="200.0" stylesheets="@../style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                      </children>
                   </AnchorPane>
                </center>

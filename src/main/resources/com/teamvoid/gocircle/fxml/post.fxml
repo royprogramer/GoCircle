@@ -1,8 +1,143 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.AnchorPane?>
+<?import com.jfoenix.controls.JFXColorPicker?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="320.0" prefWidth="350.0" style="-fx-background-radius: 10;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teamvoid.gocircle.PostController">
-
-</AnchorPane>
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="565.0" spacing="10.0" style="-fx-background-color: #0E121C;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teamvoid.gocircle.PostController">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="60.0" style="-fx-background-color: #161C2C;">
+         <children>
+            <ImageView fx:id="profileimage" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+            <VBox alignment="CENTER">
+               <children>
+                  <HBox>
+                     <children>
+                        <Label fx:id="postusrname" text="Username" textFill="WHITE">
+                           <font>
+                              <Font name="Concert One" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <Label fx:id="date" text="1h" textFill="#6d6f72">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <ImageView fx:id="globe" fitHeight="15.0" fitWidth="14.0">
+                           <image>
+                              <Image url="@../Image/icons8-timezone-globe-25.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="4.0" top="2.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets left="20.0" right="20.0" />
+         </padding>
+      </HBox>
+      <Label fx:id="caption" maxWidth="1.7976931348623157E308" text="caption" textFill="WHITE">
+         <VBox.margin>
+            <Insets left="20.0" right="20.0" />
+         </VBox.margin>
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="mypost" fitHeight="535.0" fitWidth="535.0" pickOnBounds="true" preserveRatio="true" />
+      <StackPane prefHeight="67.0" prefWidth="565.0" style="-fx-background-color: #161C2C;">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="67.0" prefWidth="34.0">
+                     <children>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" onMouseClicked="#star">
+                           <image>
+                              <Image url="@../Image/icons8-star-48.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="67.0" prefWidth="34.0">
+                     <children>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" onMouseClicked="#comment">
+                           <image>
+                              <Image url="@../Image/icons8-speech-bubble-48.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <Pane prefHeight="67.0" prefWidth="451.0" />
+                  <HBox alignment="CENTER" prefHeight="67.0" prefWidth="44.0">
+                     <children>
+                        <ImageView fx:id="save" fitHeight="29.0" fitWidth="40.0">
+                           <image>
+                              <Image url="@../Image/icons8-favorites-100.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="15.0" right="15.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="67.0" prefWidth="34.0">
+                     <children>
+                        <ImageView fx:id="starclick" fitHeight="35.0" fitWidth="35.0">
+                           <image>
+                              <Image url="@../Image/icons8-star-64.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="67.0" prefWidth="34.0">
+                     <children>
+                        <ImageView fx:id="commentclick" fitHeight="25.0" fitWidth="25.0">
+                           <image>
+                              <Image url="@../Image/icons8-chat-bubble-24.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <Pane prefHeight="67.0" prefWidth="451.0" />
+                  <HBox alignment="CENTER" prefHeight="67.0" prefWidth="44.0">
+                     <children>
+                        <ImageView fx:id="saveclick" fitHeight="31.0" fitWidth="40.0">
+                           <image>
+                              <Image url="@../Image/icons8-favorites-51.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="15.0" right="15.0" />
+               </padding>
+            </HBox>
+         </children>
+      </StackPane>
+      <JFXColorPicker />
+   </children>
+</VBox>
