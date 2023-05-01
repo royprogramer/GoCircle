@@ -15,15 +15,15 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="770.0" prefWidth="1200.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teamvoid.gocircle.DboardController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="770.0" prefWidth="1200.0" style="-fx-background-color: #00000;" styleClass="backgroundColor8" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teamvoid.gocircle.DboardController">
    <children>
       <BorderPane prefHeight="770.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
             <BorderPane prefHeight="770.0" prefWidth="202.0" BorderPane.alignment="CENTER">
                <left>
-                  <AnchorPane prefHeight="770.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+                  <AnchorPane prefHeight="770.0" prefWidth="160.0" style="-fx-background-color: #2b283e;" BorderPane.alignment="CENTER">
                      <children>
-                        <VBox fx:id="pane1" layoutY="74.0" prefHeight="696.0" prefWidth="68.0" spacing="30.0" style="-fx-background-color: #313239;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="92.0" AnchorPane.topAnchor="74.0">
+                        <VBox fx:id="pane1" layoutY="74.0" prefHeight="696.0" prefWidth="68.0" spacing="30.0" style="-fx-background-color: #2b283e;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="92.0" AnchorPane.topAnchor="74.0">
                            <children>
                               <Pane prefHeight="40.0" prefWidth="43.0" style="-fx-background-radius: 10;" styleClass="close-btn3" stylesheets="@../style.css">
                                  <children>
@@ -75,7 +75,7 @@
                               <Insets bottom="10.0" left="10.0" right="10.0" top="20.0" />
                            </padding>
                         </VBox>
-                        <VBox fx:id="pane2" layoutY="74.0" prefHeight="696.0" prefWidth="110.0" spacing="30.0" style="-fx-background-color: #272634; -fx-background-radius: 0 15 0 0;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="74.0">
+                        <VBox fx:id="pane2" layoutY="74.0" prefHeight="696.0" prefWidth="87.0" spacing="30.0" style="-fx-background-color: #2b283e;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="74.0">
                            <children>
                               <JFXButton fx:id="homebtn" alignment="TOP_LEFT" buttonType="RAISED" ellipsisString="" focusTraversable="false" onAction="#homebutton" prefHeight="40.0" prefWidth="110.0" ripplerFill="#8f76da" text="Home" textFill="WHITE" underline="true">
                                  <font>
