@@ -92,7 +92,11 @@ public class DboardController implements Initializable {
     }
 
     @FXML
-    void homebutton(ActionEvent event) {
+    void homebutton(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/timeline.fxml"));
+        Parent fxml = loader.load();
+        changepane.getChildren().removeAll();
+        changepane.getChildren().setAll(fxml);
 
     }
 
