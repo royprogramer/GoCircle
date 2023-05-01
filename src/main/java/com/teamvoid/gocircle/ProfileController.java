@@ -3,6 +3,7 @@ package com.teamvoid.gocircle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
@@ -11,8 +12,13 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Circle;
 
 import java.io.IOException;
+import java.net.URL;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ResourceBundle;
 
-public class ProfileController {
+public class ProfileController implements Initializable {
 
     @FXML
     private Circle Circle1;
@@ -46,6 +52,8 @@ public class ProfileController {
 
     @FXML
     private Label uniNameshow;
+    private String username;
+    Connection connect;
 
     @FXML
     void createpost(MouseEvent event) {
@@ -76,4 +84,19 @@ public class ProfileController {
 
     }
 
+    public void setData(String username) {
+        this.username=username;
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        DatabaseConnection connectNow= new DatabaseConnection();
+        connect= connectNow.getConnect();
+        try {
+            Statement statement= connect.createStatement();
+            String query="";
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

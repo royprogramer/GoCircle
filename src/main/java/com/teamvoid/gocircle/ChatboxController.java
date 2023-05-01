@@ -30,6 +30,7 @@ public class ChatboxController {
 
     @FXML
     private TextArea textarea;
+    private String username;
 
     @FXML
     void attach(MouseEvent event) {
@@ -41,4 +42,7 @@ public class ChatboxController {
 
     }
 
+    public void setData(String username) {
+        this.username=username;
+    }
 }

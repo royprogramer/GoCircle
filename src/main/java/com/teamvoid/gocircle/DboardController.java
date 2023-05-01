@@ -18,9 +18,11 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
 import java.util.ResourceBundle;
 
 public class DboardController implements Initializable {
+    Connection connect;
     @FXML
     private StackPane changepane;
 
@@ -49,6 +51,7 @@ public class DboardController implements Initializable {
     private JFXButton studybtn;
     @FXML
     private ImageView menueicon;
+    private String username;
 
     @FXML
     void logout(MouseEvent event) throws IOException {
@@ -61,7 +64,11 @@ public class DboardController implements Initializable {
     }
     @FXML
     void chaticon(MouseEvent event) throws IOException {
-        Parent fxml = FXMLLoader.load(getClass().getResource("fxml/chatbox.fxml"));
+        FXMLLoader fxmlLoader=FXMLLoader.load(getClass().getResource("fxml/chatbox.fxml"));
+        Parent fxml = fxmlLoader.load();
+        ChatboxController chatboxController =fxmlLoader.getController();
+        chatboxController.setData(username);
+
         changepane.getChildren().removeAll();
         changepane.getChildren().setAll(fxml);
 
@@ -89,7 +96,11 @@ public class DboardController implements Initializable {
 
     @FXML
     void profilebutton(ActionEvent event) throws IOException {
-        Parent fxml = FXMLLoader.load(getClass().getResource("fxml/profile-page.fxml"));
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/profile.fxml"));
+        Parent fxml = loader.load();
+        ProfileController profileController =loader.load();
+        profileController.setData(username);
         changepane.getChildren().removeAll();
         changepane.getChildren().setAll(fxml);
 
@@ -125,6 +136,8 @@ public class DboardController implements Initializable {
 
         menueicon.setVisible(false);
         menueicon2.setVisible(true);
+        DatabaseConnection connectNow= new DatabaseConnection();
+        connect= connectNow.getConnect();
 
 
     }
@@ -160,7 +173,14 @@ public class DboardController implements Initializable {
         keepbtn.setVisible(false);
         menueicon2.setVisible(false);
 
+        DatabaseConnection connectNow= new DatabaseConnection();
+        connect= connectNow.getConnect();
 
+
+    }
+
+    public void setData(String username) {
+        this.username=username;
     }
 }
 
