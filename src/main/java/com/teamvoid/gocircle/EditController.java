@@ -1,16 +1,13 @@
 package com.teamvoid.gocircle;
 
+import com.teamvoid.gocircle.DatabaseConnection;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.StackPane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 
@@ -22,72 +19,41 @@ import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
 
-public class ProfileController implements Initializable {
+public class EditController implements Initializable {
 
     @FXML
-    private Circle Circle1;
-
+    public Circle profilePic;
+    Connection connect;
     @FXML
     private Label Name;
 
     @FXML
-    private Circle ball1;
+    private TextField department;
 
     @FXML
-    private Circle ball2;
+    private Label givencirclename;
 
     @FXML
-    private Circle ball3;
+    private TextField uniMail;
 
     @FXML
-    private Circle ball4;
+    private TextField university;
 
     @FXML
-    private Label circleName;
-
-    @FXML
-    private Label departmentnameshow;
-
-    @FXML
-    private ImageView profilepic;
-
-    @FXML
-    private StackPane stackpane;
-
-    @FXML
-    private Label uniNameshow;
+    private TextField fullName;
     private String username;
-    Connection connect;
-
-    @FXML
-    void createpost(MouseEvent event) {
-
-    }
-
-    @FXML
-    void editbtn(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader =new FXMLLoader(getClass().getResource("fxml/edit.fxml"));
-        Parent fxml = fxmlLoader.load();
-        EditController editController=fxmlLoader.getController();
-        editController.setData(username);
-        stackpane.getChildren().removeAll();
-        stackpane.getChildren().setAll(fxml);
-
-
-    }
-
-    @FXML
-    void goback(MouseEvent event) {
-
-    }
-
-    @FXML
-    void imageset(MouseEvent event) {
-
-    }
 
     @FXML
     void send(ActionEvent event) {
+
+    }
+
+    @FXML
+    void submitbtn(ActionEvent event) throws SQLException {
+        Statement statement=connect.createStatement();
+        String query =  "UPDATE students_info SET `Versity_mail` = '" + uniMail.getText() + "', `Full Name` = '" + fullName.getText() + "', `University` = '" + university.getText() + "', `Department` = '" + department.getText() + "' WHERE `Username` = '" + username + "'";
+
+        statement.executeUpdate(query);
 
     }
 
@@ -106,25 +72,27 @@ public class ProfileController implements Initializable {
                 ResultSet resultSet= statement.executeQuery(query);
                 while (resultSet.next())
                 {
+                    String mail=resultSet.getString(2);
                     String name=resultSet.getString(4);
                     String unversityname=resultSet.getString(5);
-                    String department=resultSet.getString(6);
+                    String unidepartment=resultSet.getString(6);
                     Blob profileBlob= resultSet.getBlob(7);
                     if(name!=null)
                     {
-                        Name.setText(name);
-                    } else Name.setText("Not Found");
+                        fullName.setText(name);
+                    } else fullName.setText("Not Found");
 
 
                     if(unversityname!=null)
                     {
-                        uniNameshow.setText(unversityname);
-                    } else uniNameshow.setText("Not Found");
+                        university.setText(unversityname);
+                    } else university.setText("Not Found");
 
-                    if(department!=null)
+                    if(unidepartment!=null)
                     {
-                        departmentnameshow.setText(department);
-                    } else departmentnameshow.setText("Not Found");
+                        department.setText(unidepartment);
+                    } else department.setText("Not Found");
+                    if(mail!=null)uniMail.setText(mail);
 
                     if(profileBlob!=null){
                         String path = "temp/"+username+".png";
@@ -133,12 +101,12 @@ public class ProfileController implements Initializable {
                         outPutStream.write(byteArray);
                         outPutStream.close();
                         FileInputStream imgStream = new FileInputStream(path);
-                        profilepic.setImage(new Image(imgStream));
+                        profilePic.setFill(new ImagePattern(new Image(imgStream)));
                     }
                     else{
                         String path="temp/default-profile-photo.jpg";
                         FileInputStream imgStream = new FileInputStream(path);
-                        profilepic.setImage(new Image(imgStream));
+                        profilePic.setFill(new ImagePattern(new Image(imgStream)));
                     }
                 }
             } catch (SQLException e) {
@@ -149,9 +117,8 @@ public class ProfileController implements Initializable {
                 throw new RuntimeException(e);
             }
         });
-
     }
 
-    public void goBack(MouseEvent mouseEvent) {
+    public void uploadPic(ActionEvent actionEvent) {
     }
 }
