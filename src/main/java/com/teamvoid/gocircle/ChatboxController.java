@@ -1,4 +1,44 @@
 package com.teamvoid.gocircle;
 
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+
 public class ChatboxController {
+
+    @FXML
+    private ImageView chatNamepic;
+
+    @FXML
+    private ImageView chatProfilepic;
+
+    @FXML
+    private ImageView chatboxpic;
+
+    @FXML
+    private Label chatname;
+
+    @FXML
+    private Label profilename;
+
+    @FXML
+    private TextField search;
+
+    @FXML
+    private TextArea textarea;
+
+    @FXML
+    void attach(MouseEvent event) {
+
+    }
+
+    @FXML
+    void send(ActionEvent event) {
+
+    }
+
 }
