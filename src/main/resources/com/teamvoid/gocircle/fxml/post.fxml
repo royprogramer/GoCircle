@@ -138,6 +138,5 @@
             </HBox>
          </children>
       </StackPane>
-      <JFXColorPicker />
    </children>
 </VBox>

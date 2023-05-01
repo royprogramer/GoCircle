@@ -51,8 +51,6 @@ public class DboardController implements Initializable {
     private ImageView menueicon;
 
     @FXML
-    private VBox p1;
-    @FXML
     void logout(MouseEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("fxml/dfg.fxml"));
         Scene scene1 = new Scene(root);
@@ -90,7 +88,10 @@ public class DboardController implements Initializable {
 
 
     @FXML
-    void profilebutton(ActionEvent event) {
+    void profilebutton(ActionEvent event) throws IOException {
+        Parent fxml = FXMLLoader.load(getClass().getResource("fxml/profile-page.fxml"));
+        changepane.getChildren().removeAll();
+        changepane.getChildren().setAll(fxml);
 
     }
 
@@ -145,7 +146,6 @@ public class DboardController implements Initializable {
 
         menueicon.setVisible(true);
         menueicon2.setVisible(false);
-        p1.setVisible(true);
 
     }
 
