@@ -345,7 +345,6 @@ public class LoginregiController implements Initializable {
 
         DatabaseConnection connectNow= new DatabaseConnection();
         connect= connectNow.getConnect();
-
     }
 }
 
