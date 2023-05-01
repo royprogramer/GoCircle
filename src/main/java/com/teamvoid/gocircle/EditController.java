@@ -10,11 +10,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
@@ -42,6 +41,7 @@ public class EditController implements Initializable {
     @FXML
     private TextField fullName;
     private String username;
+    private FileInputStream fileInputStream;
 
     @FXML
     void send(ActionEvent event) {
@@ -49,9 +49,30 @@ public class EditController implements Initializable {
     }
 
     @FXML
-    void submitbtn(ActionEvent event) throws SQLException {
-        Statement statement=connect.createStatement();
-        String query =  "UPDATE students_info SET `Versity_mail` = '" + uniMail.getText() + "', `Full Name` = '" + fullName.getText() + "', `University` = '" + university.getText() + "', `Department` = '" + department.getText() + "' WHERE `Username` = '" + username + "'";
+    void submitbtn(ActionEvent event) throws SQLException, FileNotFoundException {
+    FileInputStream fileInputStream1 = new FileInputStream("temp/default-profile-photo.jpg");
+String query =  "UPDATE students_info SET `Versity_mail` = '" + uniMail.getText() + "', `Full Name` = '" + fullName.getText() + "', `University` = '" + university.getText() + "', `Department` = '" + department.getText() + "', `profile_pic` = '" + fileInputStream + "' WHERE `Username` = '" + username + "'";
+ Statement statement=connect.createStatement();
+
+//        String query = "UPDATE students_info SET `Versity_mail` = ?, `Full Name` = ?, `University` = ?, `Department` = ?, `profile_pic` = ? WHERE Username = ?";
+//
+//        PreparedStatement statement = connect.prepareStatement(query);
+//        statement.setString(1,uniMail.getText());
+//        statement.setString(2,fullName.getText());
+//        statement.setString(3,university.getText());
+//        statement.setString(4,department.getText());
+//        statement.setBlob(5,fileInputStream);
+//        statement.setString(6,username);
+//Statement statement= connect.createStatement();
+//        String query = "UPDATE students_info SET `Versity_mail` = ?, `Full Name` = ?, `University` = ?, `Department` = ? WHERE Username = ?";
+//        PreparedStatement statement = connect.prepareStatement(query);
+//
+//        statement.setString(1, uniMail.getText());
+//        statement.setString(2, fullName.getText());
+//        statement.setString(3, university.getText());
+//        statement.setString(4, department.getText());
+////        statement.setBinaryStream(5, fileInputStream);
+//        statement.setString(5, username);
 
         statement.executeUpdate(query);
 
@@ -119,6 +140,16 @@ public class EditController implements Initializable {
         });
     }
 
-    public void uploadPic(ActionEvent actionEvent) {
+    public void uploadPic(ActionEvent actionEvent) throws IOException {
+        FileChooser fileChooser = new FileChooser();
+        Stage stage = new Stage();
+        File file = fileChooser.showOpenDialog(stage);
+        stage.show();
+        stage.close();
+        System.out.println(file);
+        fileInputStream = new FileInputStream(file);
+        profilePic.setFill(new ImagePattern(new Image(fileInputStream)));
+
+
     }
 }
