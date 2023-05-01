@@ -8,13 +8,14 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="523.0" style="-fx-background-color: #0E121C;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teamvoid.gocircle.ProfileRelated.EditController">
+<AnchorPane prefHeight="700.0" prefWidth="523.0" style="-fx-background-color: #0E121C;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teamvoid.gocircle.EditController">
    <children>
       <VBox layoutX="29.0" layoutY="179.0" prefHeight="347.0" prefWidth="113.0" spacing="5.0">
          <children>
-            <JFXButton buttonType="RAISED" prefHeight="42.0" prefWidth="64.0" style="-fx-background-color: #9E88DE; -fx-background-radius: 50;" text=" ">
+            <JFXButton buttonType="RAISED" onAction="#send" prefHeight="42.0" prefWidth="64.0" style="-fx-background-color: #9E88DE; -fx-background-radius: 50;" text=" ">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="31.0">
                      <image>
@@ -70,7 +71,7 @@
             <Insets left="10.0" top="20.0" />
          </padding>
       </VBox>
-      <Label fx:id="Name" layoutX="20.0" layoutY="118.0" prefHeight="46.0" prefWidth="123.0" text="Your Name" textFill="#a4cbe8ba">
+      <Label fx:id="Name" layoutX="38.0" layoutY="118.0" prefHeight="46.0" prefWidth="96.0" text="Name" textFill="#a4cbe8ba">
          <font>
             <Font name="Concert One" size="25.0" />
          </font>
@@ -80,22 +81,22 @@
             <Font name="Concert One" size="25.0" />
          </font>
       </Label>
-      <TextField fx:id="user_name" focusTraversable="false" layoutX="143.0" layoutY="121.0" opacity="0.3" prefHeight="40.0" prefWidth="335.0">
+      <TextField fx:id="fullName" focusTraversable="false" layoutX="143.0" layoutY="121.0" opacity="0.3" prefHeight="40.0" prefWidth="335.0" promptText="Enter Your Name">
          <font>
             <Font size="15.0" />
          </font>
       </TextField>
-      <TextField fx:id="university" focusTraversable="false" layoutX="143.0" layoutY="281.0" opacity="0.3" prefHeight="40.0" prefWidth="335.0">
+      <TextField fx:id="university" focusTraversable="false" layoutX="143.0" layoutY="281.0" opacity="0.3" prefHeight="40.0" prefWidth="335.0" promptText="Enter Your University">
          <font>
             <Font size="15.0" />
          </font>
       </TextField>
-      <TextField fx:id="department" focusTraversable="false" layoutX="143.0" layoutY="379.0" opacity="0.3" prefHeight="40.0" prefWidth="335.0">
+      <TextField fx:id="department" focusTraversable="false" layoutX="143.0" layoutY="379.0" opacity="0.3" prefHeight="40.0" prefWidth="335.0" promptText="Enter Your department">
          <font>
             <Font size="15.0" />
          </font>
       </TextField>
-      <TextField fx:id="uniMail" focusTraversable="false" layoutX="143.0" layoutY="486.0" opacity="0.3" prefHeight="40.0" prefWidth="335.0">
+      <TextField fx:id="uniMail" focusTraversable="false" layoutX="143.0" layoutY="486.0" opacity="0.3" prefHeight="40.0" prefWidth="335.0" promptText="Enter Tour Versity Mail">
          <font>
             <Font size="15.0" />
          </font>
@@ -105,10 +106,16 @@
             <Font name="Concert One" size="18.0" />
          </font>
       </Label>
-      <JFXButton alignment="CENTER" buttonType="RAISED" layoutX="196.0" layoutY="605.0" onAction="#submitbtn" prefHeight="40.0" prefWidth="131.0" style="-fx-background-color: #B2C4A0; -fx-background-radius: 10;" text="Submit" textFill="WHITE">
+      <JFXButton alignment="CENTER" buttonType="RAISED" layoutX="196.0" layoutY="642.0" onAction="#submitbtn" prefHeight="40.0" prefWidth="131.0" style="-fx-background-color: #B2C4A0; -fx-background-radius: 10;" text="Submit" textFill="WHITE">
          <font>
             <Font name="Concert One" size="20.0" />
          </font>
       </JFXButton>
+      <JFXButton alignment="CENTER" buttonType="RAISED" layoutX="143.0" layoutY="50.0" onAction="#uploadPic" prefHeight="44.0" prefWidth="211.0" style="-fx-background-color: #B2C4A0; -fx-background-radius: 10;" text="Upload Picture" textFill="WHITE">
+         <font>
+            <Font name="Concert One" size="20.0" />
+         </font>
+      </JFXButton>
+      <Circle fx:id="profilePic" fill="DODGERBLUE" layoutX="64.0" layoutY="78.0" radius="35.0" stroke="BLACK" strokeType="INSIDE" />
    </children>
 </AnchorPane>
