@@ -15,7 +15,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="770.0" prefWidth="1200.0" styleClass="backgroundColor8" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teamvoid.gocircle.DboardController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="770.0" prefWidth="1200.0" styleClass="backgroundColor8" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teamvoid.gocircle.DboardController">
    <children>
       <BorderPane prefHeight="770.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
@@ -117,7 +117,6 @@
                            </image>
                         </ImageView>
                         <Circle fx:id="profilePic" fill="WHITE" layoutX="106.0" layoutY="34.0" opacity="0.12" radius="26.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-                        <Circle fx:id="activeStatus" fill="#4cd390" layoutX="126.0" layoutY="52.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
                      </children>
                   </AnchorPane>
                </left>

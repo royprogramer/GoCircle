@@ -178,10 +178,13 @@ public class LoginregiController implements Initializable {
         ResultSet resultSet= statement.executeQuery(verify);
         while (resultSet.next()) {
             if (resultSet.getInt(1) == 1) {
+                username= userName.getText();
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/dboard.fxml"));
+
                 Parent root = loader.load();
                 DboardController dboardController =loader.getController();
                 dboardController.setData(username);
+
                 Scene scene3 = new Scene(root);
 
 

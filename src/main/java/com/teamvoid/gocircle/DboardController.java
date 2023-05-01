@@ -2,6 +2,7 @@ package com.teamvoid.gocircle;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.animation.TranslateTransition;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,19 +10,27 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
+import java.sql.*;
 import java.util.ResourceBundle;
 
 public class DboardController implements Initializable {
+    @FXML
+    private Circle profilePic;
     Connection connect;
     @FXML
     private StackPane changepane;
@@ -52,7 +61,6 @@ public class DboardController implements Initializable {
     @FXML
     private ImageView menueicon;
     private String username;
-
     @FXML
     void logout(MouseEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("fxml/dfg.fxml"));
@@ -64,7 +72,7 @@ public class DboardController implements Initializable {
     }
     @FXML
     void chaticon(MouseEvent event) throws IOException {
-        FXMLLoader fxmlLoader=FXMLLoader.load(getClass().getResource("fxml/chatbox.fxml"));
+        FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("fxml/chatbox.fxml"));
         Parent fxml = fxmlLoader.load();
         ChatboxController chatboxController =fxmlLoader.getController();
         chatboxController.setData(username);
@@ -97,10 +105,13 @@ public class DboardController implements Initializable {
     @FXML
     void profilebutton(ActionEvent event) throws IOException {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/profile.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/profile-page.fxml"));
         Parent fxml = loader.load();
-        ProfileController profileController =loader.load();
+        ProfileController profileController =loader.getController();
+
         profileController.setData(username);
+
+
         changepane.getChildren().removeAll();
         changepane.getChildren().setAll(fxml);
 
@@ -173,8 +184,41 @@ public class DboardController implements Initializable {
         keepbtn.setVisible(false);
         menueicon2.setVisible(false);
 
-        DatabaseConnection connectNow= new DatabaseConnection();
-        connect= connectNow.getConnect();
+        Platform.runLater(()->{
+            DatabaseConnection connectNow= new DatabaseConnection();
+            connect= connectNow.getConnect();
+            try {
+                Statement statement= connect.createStatement();
+                String query=" SELECT * FROM `students_info` WHERE `Username` LIKE " +"\""+username+"\"";
+                ResultSet resultSet= statement.executeQuery(query);
+                while (resultSet.next())
+                {
+                    Blob profileBlob= resultSet.getBlob(7);
+                    if(profileBlob!=null){
+                        String path = "temp/"+username+".png";
+                        byte byteArray[] = profileBlob.getBytes(1, (int) profileBlob.length());
+                        FileOutputStream outPutStream = new FileOutputStream(path);
+                        outPutStream.write(byteArray);
+                        outPutStream.close();
+                        FileInputStream imgStream = new FileInputStream(path);
+                        profilePic.setFill(new ImagePattern(new Image(imgStream)));
+                    }
+                    else{
+                        String path="temp/default-profile-photo.jpg";
+                        FileInputStream imgStream = new FileInputStream(path);
+                        profilePic.setFill(new ImagePattern(new Image(imgStream)));
+                    }
+
+
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (FileNotFoundException e) {
+                throw new RuntimeException(e);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
 
 
     }
