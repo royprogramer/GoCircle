@@ -1,14 +1,17 @@
-package com.teamvoid.gocircle;
+package com.teamvoid.gocircle.ProfileRelated;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Circle;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -47,17 +50,12 @@ public class ProfileController {
     @FXML
     private Label uniNameshow;
 
-    @FXML
-    void createpost(MouseEvent event) {
-
-    }
 
     @FXML
     void editbtn(ActionEvent event) throws IOException {
         Parent fxml = FXMLLoader.load(getClass().getResource("fxml/edit.fxml"));
         stackpane.getChildren().removeAll();
         stackpane.getChildren().setAll(fxml);
-
 
     }
 
@@ -71,9 +69,5 @@ public class ProfileController {
 
     }
 
-    @FXML
-    void send(ActionEvent event) {
-
-    }
 
 }

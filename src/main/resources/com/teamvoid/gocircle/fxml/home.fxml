@@ -26,9 +26,9 @@
     <children>
         <BorderPane prefHeight="534.0" prefWidth="908.0" style="-fx-border-radius: 40;">
          <center>
-                <Pane prefHeight="614.0" prefWidth="940.0" style="-fx-border-radius: 40;" styleClass="backgroundColor1" stylesheets="@../style.css" BorderPane.alignment="CENTER">
+                <Pane prefHeight="614.0" prefWidth="940.0" style="-fx-border-radius: 40;" styleClass="backgroundColor1" stylesheets="@../css/style.css" BorderPane.alignment="CENTER">
                     <children>
-                        <Pane layoutX="468.0" opacity="0.87" prefHeight="534.0" prefWidth="442.0" styleClass="backgroundColor" stylesheets="@../style.css">
+                        <Pane layoutX="468.0" opacity="0.87" prefHeight="534.0" prefWidth="442.0" styleClass="backgroundColor" stylesheets="@../css/style.css">
                             <opaqueInsets>
                                 <Insets />
                             </opaqueInsets>

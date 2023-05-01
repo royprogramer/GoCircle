@@ -13,10 +13,10 @@
    <children>
       <BorderPane prefHeight="534.0" prefWidth="904.0" style="-fx-background-color: #212A32;">
          <left>
-            <Pane prefHeight="534.0" prefWidth="429.0" styleClass="backgroundColor" stylesheets="@../style.css" BorderPane.alignment="CENTER" />
+            <Pane prefHeight="534.0" prefWidth="429.0" styleClass="backgroundColor" stylesheets="@../css/style.css" BorderPane.alignment="CENTER" />
          </left>
          <center>
-            <Pane prefHeight="200.0" prefWidth="200.0" styleClass="backgroundColor1" stylesheets="@../style.css" BorderPane.alignment="CENTER">
+            <Pane prefHeight="200.0" prefWidth="200.0" styleClass="backgroundColor1" stylesheets="@../css/style.css" BorderPane.alignment="CENTER">
                <children>
                   <TextField fx:id="signupUsername" layoutX="78.0" layoutY="129.0" prefHeight="35.0" prefWidth="320.0" promptText="username" />
                   <TextField fx:id="email" layoutX="78.0" layoutY="195.0" prefHeight="35.0" prefWidth="320.0" promptText="universtiy mail" style="-fx-background-radius: 5;" />

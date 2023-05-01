@@ -15,7 +15,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="770.0" prefWidth="1200.0" styleClass="backgroundColor8" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teamvoid.gocircle.DboardController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="770.0" prefWidth="1200.0" styleClass="backgroundColor8" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teamvoid.gocircle.DboardController">
    <children>
       <BorderPane prefHeight="770.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
@@ -25,7 +25,7 @@
                      <children>
                         <VBox fx:id="pane1" layoutY="74.0" prefHeight="696.0" prefWidth="68.0" spacing="30.0" style="-fx-background-color: #2b283e;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="92.0" AnchorPane.topAnchor="74.0">
                            <children>
-                              <Pane prefHeight="40.0" prefWidth="43.0" style="-fx-background-radius: 10;" styleClass="close-btn3" stylesheets="@../style.css">
+                              <Pane prefHeight="40.0" prefWidth="43.0" style="-fx-background-radius: 10;" styleClass="close-btn3">
                                  <children>
                                     <ImageView fitHeight="37.0" fitWidth="38.0" layoutX="4.0" layoutY="2.0">
                                        <image>
@@ -34,7 +34,7 @@
                                     </ImageView>
                                  </children>
                               </Pane>
-                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="43.0" style="-fx-background-radius: 10;" styleClass="close-btn3" stylesheets="@../style.css">
+                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="43.0" style="-fx-background-radius: 10;" styleClass="close-btn3" stylesheets="@../css/style.css">
                                  <children>
                                     <ImageView fitHeight="30.0" fitWidth="32.0" layoutX="8.0" layoutY="5.0">
                                        <image>
@@ -43,7 +43,7 @@
                                     </ImageView>
                                  </children>
                               </Pane>
-                              <Pane layoutX="10.0" layoutY="70.0" prefHeight="40.0" prefWidth="43.0" style="-fx-background-radius: 10;" styleClass="close-btn3" stylesheets="@../style.css">
+                              <Pane layoutX="10.0" layoutY="70.0" prefHeight="40.0" prefWidth="43.0" style="-fx-background-radius: 10;" styleClass="close-btn3" stylesheets="@../css/style.css">
                                  <children>
                                     <ImageView fitHeight="30.0" fitWidth="32.0" layoutX="8.0" layoutY="5.0">
                                        <image>
@@ -52,7 +52,7 @@
                                     </ImageView>
                                  </children>
                               </Pane>
-                              <Pane layoutX="10.0" layoutY="130.0" prefHeight="40.0" prefWidth="43.0" style="-fx-background-radius: 10;" styleClass="close-btn3" stylesheets="@../style.css">
+                              <Pane layoutX="10.0" layoutY="130.0" prefHeight="40.0" prefWidth="43.0" style="-fx-background-radius: 10;" styleClass="close-btn3" stylesheets="@../css/style.css">
                                  <children>
                                     <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="6.0" layoutY="3.0">
                                        <image>
@@ -61,7 +61,7 @@
                                     </ImageView>
                                  </children>
                               </Pane>
-                              <Pane layoutX="10.0" layoutY="190.0" prefHeight="41.0" prefWidth="48.0" style="-fx-background-radius: 10;" styleClass="close-btn3" stylesheets="@../style.css">
+                              <Pane layoutX="10.0" layoutY="190.0" prefHeight="41.0" prefWidth="48.0" style="-fx-background-radius: 10;" styleClass="close-btn3" stylesheets="@../css/style.css">
                                  <children>
                                     <ImageView fitHeight="25.0" fitWidth="35.0" layoutX="5.0" layoutY="8.0">
                                        <image>
@@ -157,7 +157,7 @@
                         <Pane prefHeight="71.0" prefWidth="255.0" HBox.hgrow="ALWAYS" />
                         <Pane prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <Pane layoutX="111.0" layoutY="11.0" onMouseClicked="#minimize" prefHeight="29.0" prefWidth="25.0" style="-fx-background-radius: 5;" styleClass="close-btn2" stylesheets="@../style.css">
+                              <Pane layoutX="111.0" layoutY="11.0" onMouseClicked="#minimize" prefHeight="29.0" prefWidth="25.0" style="-fx-background-radius: 5;" styleClass="close-btn2" stylesheets="@../css/style.css">
                                  <padding>
                                     <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                                  </padding>
@@ -169,7 +169,7 @@
                                     </ImageView>
                                  </children>
                               </Pane>
-                              <Pane layoutX="139.0" layoutY="11.0" onMouseClicked="#close" prefHeight="27.0" prefWidth="25.0" style="-fx-background-radius: 5;" styleClass="close-btn2" stylesheets="@../style.css">
+                              <Pane layoutX="139.0" layoutY="11.0" onMouseClicked="#close" prefHeight="27.0" prefWidth="25.0" style="-fx-background-radius: 5;" styleClass="close-btn2" stylesheets="@../css/style.css">
                                  <children>
                                     <ImageView accessibleRole="BUTTON" fitHeight="20.0" fitWidth="21.0" layoutX="2.0" layoutY="3.0" onMouseClicked="#close">
                                        <image>
@@ -194,13 +194,13 @@
                <right>
                   <BorderPane prefHeight="696.0" prefWidth="75.0" BorderPane.alignment="CENTER">
                      <center>
-                        <AnchorPane prefHeight="696.0" prefWidth="150.0" BorderPane.alignment="CENTER">
+                        <AnchorPane prefHeight="696.0" prefWidth="87.0" BorderPane.alignment="CENTER">
                            <children>
                               <HBox layoutX="1.0" layoutY="237.0" prefHeight="696.0" prefWidth="150.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
                                     <VBox prefHeight="200.0" prefWidth="75.0" spacing="50.0" style="-fx-background-color: #2b283e;">
                                        <children>
-                                          <Pane onMouseClicked="#chaticon" prefHeight="52.0" prefWidth="55.0" style="-fx-background-radius: 50;" styleClass="close-btn3" stylesheets="@../style.css">
+                                          <Pane onMouseClicked="#chaticon" prefHeight="52.0" prefWidth="55.0" style="-fx-background-radius: 50;" styleClass="close-btn3" stylesheets="@../css/style.css">
                                              <children>
                                                 <ImageView fitHeight="35.0" fitWidth="31.0" layoutX="12.0" layoutY="9.0">
                                                    <image>
@@ -209,7 +209,7 @@
                                                 </ImageView>
                                              </children>
                                           </Pane>
-                                          <Pane layoutX="20.0" layoutY="30.0" onMouseClicked="#createpost" prefHeight="52.0" prefWidth="55.0" style="-fx-background-radius: 50;" styleClass="close-btn3" stylesheets="@../style.css">
+                                          <Pane layoutX="20.0" layoutY="30.0" onMouseClicked="#createpost" prefHeight="52.0" prefWidth="55.0" style="-fx-background-radius: 50;" styleClass="close-btn3" stylesheets="@../css/style.css">
                                              <children>
                                                 <ImageView fitHeight="30.0" fitWidth="31.0" layoutX="12.0" layoutY="11.0">
                                                    <image>
@@ -219,7 +219,7 @@
                                              </children>
                                           </Pane>
                                           <Pane prefHeight="324.0" prefWidth="55.0" />
-                                          <Pane onMouseClicked="#logout" prefHeight="52.0" prefWidth="55.0" style="-fx-background-radius: 50;" styleClass="close-btn3" stylesheets="@../style.css">
+                                          <Pane onMouseClicked="#logout" prefHeight="52.0" prefWidth="55.0" style="-fx-background-radius: 50;" styleClass="close-btn3" stylesheets="@../css/style.css">
                                              <children>
                                                 <ImageView fitHeight="34.0" fitWidth="36.0" layoutX="13.0" layoutY="9.0">
                                                    <image>
@@ -242,7 +242,18 @@
                <center>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 10;" BorderPane.alignment="CENTER">
                      <children>
-                        <StackPane fx:id="changepane" layoutX="280.0" layoutY="200.0" prefHeight="150.0" prefWidth="200.0" stylesheets="@../style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <StackPane fx:id="changepane" layoutX="280.0" layoutY="200.0" prefHeight="150.0" prefWidth="200.0" stylesheets="@../css/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <AnchorPane prefHeight="700.0" prefWidth="918.0">
+                                       <children>
+                                          <BorderPane layoutX="14.0" layoutY="139.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                           </children></StackPane>
                      </children>
                   </AnchorPane>
                </center>

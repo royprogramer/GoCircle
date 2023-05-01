@@ -1,9 +1,13 @@
-package com.teamvoid.gocircle;
+package com.teamvoid.gocircle.ProfileRelated;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+
+import java.io.IOException;
 
 public class EditController {
 
@@ -32,6 +36,7 @@ public class EditController {
 
     @FXML
     void submitbtn(ActionEvent event) {
+
 
     }
 

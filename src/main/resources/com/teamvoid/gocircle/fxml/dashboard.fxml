@@ -12,11 +12,11 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="770.0" prefWidth="1200.0" style="-fx-background-color: #000000;" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teamvoid.gocircle.DashboardController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="770.0" prefWidth="1200.0" style="-fx-background-color: #000000;" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teamvoid.gocircle.DashboardController">
    <children>
-      <Pane layoutY="100.0" prefHeight="671.0" prefWidth="222.0" style="-fx-background-radius: 20;" styleClass="backgroundColor2" stylesheets="@../style.css">
+      <Pane layoutY="100.0" prefHeight="671.0" prefWidth="222.0" style="-fx-background-radius: 20;" styleClass="backgroundColor2" stylesheets="@../css/style.css">
          <children>
-            <Pane prefHeight="671.0" prefWidth="75.0" styleClass="backgroundColor4" stylesheets="@../style.css">
+            <Pane prefHeight="671.0" prefWidth="75.0" styleClass="backgroundColor4" stylesheets="@../css/style.css">
                <children>
                   <Pane layoutY="93.0" prefHeight="501.0" prefWidth="75.0">
                      <children>
@@ -108,7 +108,7 @@
             <Font size="14.0" />
          </font>
       </TextField>
-      <Pane layoutX="954.0" layoutY="325.0" prefHeight="445.0" prefWidth="246.0" style="-fx-background-radius: 20 0 0 20;" styleClass="backgroundColor5" stylesheets="@../style.css">
+      <Pane layoutX="954.0" layoutY="325.0" prefHeight="445.0" prefWidth="246.0" style="-fx-background-radius: 20 0 0 20;" styleClass="backgroundColor5" stylesheets="@../css/style.css">
          <children>
             <ImageView fitHeight="43.0" fitWidth="46.0" layoutX="7.0" layoutY="17.0">
                <image>
@@ -123,7 +123,7 @@
             <Image url="@../Image/icons8-right-arrow-100.png" />
          </image>
       </ImageView>
-      <Pane layoutX="250.0" layoutY="452.0" prefHeight="270.0" prefWidth="301.0" style="-fx-background-color: #EFB758; -fx-background-radius: 20;" stylesheets="@../style.css" />
+      <Pane layoutX="250.0" layoutY="452.0" prefHeight="270.0" prefWidth="301.0" style="-fx-background-color: #EFB758; -fx-background-radius: 20;" stylesheets="@../css/style.css" />
       <Pane layoutX="600.0" layoutY="450.0" prefHeight="270.0" prefWidth="301.0" style="-fx-background-color: #CBD2B9; -fx-background-radius: 20;" />
       <Label layoutX="262.0" layoutY="389.0" text="Top Threads" textFill="WHITE">
          <font>
@@ -142,16 +142,16 @@
       </Label>
       <Pane layoutX="600.0" layoutY="157.0" prefHeight="178.0" prefWidth="301.0" style="-fx-background-color: #BBCEA8; -fx-background-radius: 20;" />
       <Pane layoutX="262.0" layoutY="157.0" prefHeight="178.0" prefWidth="301.0" style="-fx-background-color: #E0D8B0; -fx-background-radius: 20;" />
-      <Pane layoutX="954.0" layoutY="104.0" prefHeight="196.0" prefWidth="246.0" style="-fx-background-radius: 20 0 0 20;" styleClass="backgroundColor5" stylesheets="@../style.css" />
+      <Pane layoutX="954.0" layoutY="104.0" prefHeight="196.0" prefWidth="246.0" style="-fx-background-radius: 20 0 0 20;" styleClass="backgroundColor5" stylesheets="@../css/style.css" />
       <Pane layoutX="1107.0" layoutY="23.0" prefHeight="30.0" prefWidth="82.0" />
       <HBox alignment="CENTER_RIGHT" layoutX="1125.0" layoutY="23.0" prefHeight="27.0" prefWidth="50.0">
          <children>
-            <Pane prefHeight="52.0" prefWidth="25.0" style="-fx-background-radius: 5;" styleClass="close-btn2" stylesheets="@../style.css">
+            <Pane prefHeight="52.0" prefWidth="25.0" style="-fx-background-radius: 5;" styleClass="close-btn2" stylesheets="@../css/style.css">
                <padding>
                   <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                </padding>
             </Pane>
-            <Pane prefHeight="52.0" prefWidth="25.0" style="-fx-background-radius: 5;" styleClass="close-btn2" stylesheets="@../style.css">
+            <Pane prefHeight="52.0" prefWidth="25.0" style="-fx-background-radius: 5;" styleClass="close-btn2" stylesheets="@../css/style.css">
                <padding>
                   <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                </padding>
