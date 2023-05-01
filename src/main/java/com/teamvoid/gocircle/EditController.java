@@ -48,8 +48,8 @@ public class EditController implements Initializable {
     }
 
     @FXML
-    void submitbtn(ActionEvent event) throws SQLException {
-
+    void submitbtn(ActionEvent event) throws SQLException, FileNotFoundException {
+    FileInputStream fileInputStream1 = new FileInputStream("temp/default-profile-photo.jpg");
 String query =  "UPDATE students_info SET `Versity_mail` = '" + uniMail.getText() + "', `Full Name` = '" + fullName.getText() + "', `University` = '" + university.getText() + "', `Department` = '" + department.getText() + "', `profile_pic` = '" + fileInputStream + "' WHERE `Username` = '" + username + "'";
  Statement statement=connect.createStatement();
 
@@ -122,7 +122,6 @@ String query =  "UPDATE students_info SET `Versity_mail` = '" + uniMail.getText(
                         outPutStream.close();
                         FileInputStream imgStream = new FileInputStream(path);
                         profilePic.setFill(new ImagePattern(new Image(imgStream)));
-                        fileInputStream.close();
                     }
                     else{
                         String path="temp/default-profile-photo.jpg";
@@ -150,7 +149,6 @@ String query =  "UPDATE students_info SET `Versity_mail` = '" + uniMail.getText(
         fileInputStream = new FileInputStream(file);
         profilePic.setFill(new ImagePattern(new Image(fileInputStream)));
 
-        fileInputStream.close();
 
     }
 }
