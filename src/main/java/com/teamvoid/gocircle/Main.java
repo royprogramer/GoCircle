@@ -14,7 +14,8 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
 
         this.stage = stage;
-      FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/dfg.fxml"));
+     //FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/dboard.fxml"));
+     FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/dfg.fxml"));
     //FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/clientScreen.fxml"));
     // FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/post.fxml"));
      // FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/test.fxml"));

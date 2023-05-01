@@ -1,5 +1,6 @@
 package com.teamvoid.gocircle;
 
+import com.teamvoid.gocircle.DatabaseConnection;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

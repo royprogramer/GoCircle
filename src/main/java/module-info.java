@@ -14,4 +14,5 @@ module com.example.gocircle {
     exports com.teamvoid.gocircle.Client;
     opens com.teamvoid.gocircle.Client to javafx.fxml;
 
+
 }

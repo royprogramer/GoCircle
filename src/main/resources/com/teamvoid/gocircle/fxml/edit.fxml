@@ -11,11 +11,11 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="523.0" style="-fx-background-color: #0E121C;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teamvoid.gocircle.EditController">
+<AnchorPane prefHeight="700.0" prefWidth="523.0" style="-fx-background-color: #0E121C;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teamvoid.gocircle.EditController">
    <children>
       <VBox layoutX="29.0" layoutY="179.0" prefHeight="347.0" prefWidth="113.0" spacing="5.0">
          <children>
-            <JFXButton buttonType="RAISED" onAction="#send" prefHeight="42.0" prefWidth="64.0" style="-fx-background-color: #9E88DE; -fx-background-radius: 50;" text=" ">
+            <JFXButton buttonType="RAISED" prefHeight="42.0" prefWidth="64.0" style="-fx-background-color: #9E88DE; -fx-background-radius: 50;" text=" ">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="31.0">
                      <image>
