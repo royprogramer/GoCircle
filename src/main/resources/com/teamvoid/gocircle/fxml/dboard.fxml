@@ -122,7 +122,7 @@
                               <Image url="@../Image/icons8-menu-64.png" />
                            </image>
                         </ImageView>
-                        <Circle fx:id="profilePic" fill="WHITE" layoutX="106.0" layoutY="34.0" opacity="0.12" radius="26.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                        <Circle fx:id="profilePic" fill="WHITE" layoutX="106.0" layoutY="34.0" opacity="5" radius="26.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
                      </children>
                   </AnchorPane>
                </left>

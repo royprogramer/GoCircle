@@ -160,7 +160,8 @@ public class LoginregiController implements Initializable {
 
         signinLabel.setVisible(true);
         userName.setVisible(true);
-        password.setVisible(true);
+
+          password.setVisible(true);
         icon1.setVisible(true);
         icon2.setVisible(true);
         loginButton.setVisible(true);

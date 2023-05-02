@@ -210,7 +210,9 @@ public class ClientFormController extends Thread {
 
     public void send() {
         String msg = txtClientMessage.getText();
+        System.out.println(printWriter);
         printWriter.println(username + ":  " + msg + "  ");
+
 //        txtClientPane.setNodeOrientation(NodeOrientation.LEFT_TO_RIGHT);
 
         HBox hBox = new HBox();
