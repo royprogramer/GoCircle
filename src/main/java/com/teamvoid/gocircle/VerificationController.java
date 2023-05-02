@@ -48,7 +48,7 @@ public class VerificationController implements Initializable {
                 String inputInfo = "INSERT INTO `students_info` (`Username`, `Versity_mail`, `Password`) VALUES ('" + username + "', '" + email + "', '" + password + "')";
                 statement.executeUpdate(inputInfo);
                 System.out.println("Successful Insert");
-                Parent root = FXMLLoader.load(getClass().getResource("fxml/test.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("fxml/dfg.fxml"));
                 Scene scene1 = new Scene(root);
                 Stage stage1 = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
                 stage1.setScene(scene1);

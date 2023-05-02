@@ -138,7 +138,7 @@ public class DboardController implements Initializable {
     }
 
     @FXML
-    void studybutton(ActionEvent event) {
+    void studybutton(ActionEvent event) throws IOException {
 
     }
     @FXML
@@ -217,6 +217,18 @@ public class DboardController implements Initializable {
         keepbtn.setVisible(false);
         menueicon2.setVisible(false);
 
+        FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("fxml/timeline.fxml"));
+        Parent fxml = null;
+        try {
+            fxml = fxmlLoader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        changepane.getChildren().removeAll();
+        changepane.getChildren().setAll(fxml);
+
+
+
         Platform.runLater(()->{
 
             DatabaseConnection connectNow= new DatabaseConnection();
@@ -249,6 +261,7 @@ public class DboardController implements Initializable {
                     Blob profileBlob= resultSet.getBlob(7);
                     if(profileBlob!=null){
                         String path = "temp/"+username+".png";
+                        System.out.print(path);
                         byte byteArray[] = profileBlob.getBytes(1, (int) profileBlob.length());
                         FileOutputStream outPutStream = new FileOutputStream(path);
                         outPutStream.write(byteArray);

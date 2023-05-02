@@ -28,25 +28,7 @@
                </content></ScrollPane>
          </center>
          <left>
-            <Pane prefHeight="575.0" prefWidth="226.0" style="-fx-background-color: #000000;" BorderPane.alignment="CENTER">
-               <children>
-                  <ImageView fitHeight="200.0" fitWidth="200.0" layoutY="37.0">
-                     <image>
-                        <Image url="@../Image/g0R9.gif" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="38.0" fitWidth="40.0" layoutX="59.0" layoutY="123.0">
-                     <image>
-                        <Image url="@../Image/G.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="39.0" fitWidth="38.0" layoutX="103.0" layoutY="121.0">
-                     <image>
-                        <Image url="@../Image/o.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </Pane>
+            <Pane prefHeight="575.0" prefWidth="226.0" style="-fx-background-color: #000000;" BorderPane.alignment="CENTER" />
          </left>
          <right>
             <Pane prefHeight="575.0" prefWidth="158.0" style="-fx-background-color: #000000;" BorderPane.alignment="CENTER" />

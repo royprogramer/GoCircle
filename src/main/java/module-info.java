@@ -18,5 +18,8 @@ module com.example.gocircle {
     opens  com.teamvoid.gocircle.chat.chat to javafx.fxml;
     exports com.teamvoid.gocircle.chat.chat;
 
+    exports com.teamvoid.gocircle.Todo;
+    opens com.teamvoid.gocircle.Todo to javafx.fxml;
+
 
 }
