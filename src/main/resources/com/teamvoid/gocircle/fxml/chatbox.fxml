@@ -71,7 +71,7 @@
                   </VBox>
                </top>
                <center>
-                  <ScrollPane prefHeight="594.0" prefWidth="281.0" stylesheets="@../css/style.css" BorderPane.alignment="CENTER">
+                  <ScrollPane prefHeight="594.0" prefWidth="281.0" stylesheets="@../style.css" BorderPane.alignment="CENTER">
                      <content>
                         <VBox prefHeight="83.0" prefWidth="284.0">
                            <children>
@@ -169,7 +169,7 @@
                      <center>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #272634;" BorderPane.alignment="CENTER">
                            <children>
-                              <ScrollPane layoutX="68.0" layoutY="93.0" prefHeight="200.0" prefWidth="725.0" stylesheets="@../css/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <ScrollPane layoutX="68.0" layoutY="93.0" prefHeight="200.0" prefWidth="725.0" stylesheets="@../style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <content>
                                     <VBox prefHeight="57.0" prefWidth="610.0">
                                        <children>

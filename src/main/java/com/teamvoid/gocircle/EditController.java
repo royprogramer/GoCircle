@@ -9,17 +9,17 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
 
 public class EditController implements Initializable {
 
+    FileInputStream fileInputStream;
     @FXML
     public Circle profilePic;
     Connection connect;
@@ -118,6 +118,14 @@ public class EditController implements Initializable {
         });
     }
 
-    public void uploadPic(ActionEvent actionEvent) {
+    public void uploadPic(ActionEvent actionEvent) throws FileNotFoundException {
+        FileChooser fileChooser = new FileChooser();
+        Stage stage = new Stage();
+        File file = fileChooser.showOpenDialog(stage);
+        System.out.println(file.getPath());
+        stage.show();
+        stage.close();
+       fileInputStream = new FileInputStream(file.getPath());
+       profilePic.setFill(new ImagePattern(new Image(fileInputStream)));
     }
 }
