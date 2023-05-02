@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Circle;
 
@@ -59,6 +60,9 @@ public class ProfileController implements Initializable {
     Connection connect;
 
     @FXML
+    private Pane gobackpane;
+
+    @FXML
     void createpost(MouseEvent event) {
 
     }
@@ -76,7 +80,8 @@ public class ProfileController implements Initializable {
     }
 
     @FXML
-    void goback(MouseEvent event) {
+    void goback(MouseEvent event) throws IOException {
+
 
     }
 
@@ -96,6 +101,7 @@ public class ProfileController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         Platform.runLater(()->{
             DatabaseConnection connectNow= new DatabaseConnection();
             connect= connectNow.getConnect();
