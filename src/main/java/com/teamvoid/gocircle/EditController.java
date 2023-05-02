@@ -66,7 +66,7 @@ public class EditController implements Initializable {
 //        statement.setString(6,username);
 //Statement statement= connect.createStatement();
 
-//        String query = "Update students_info set Versity_mail=? Full_Name=? University=? Department=? where Username=?";
+//        String query = "Update students_info set Versity_mail=? Full Name=? University=? Department=? where Username=?";
 //
 //        PreparedStatement statement = connect.prepareStatement(query);
 //        statement.setString(1, uniMail.getText());
@@ -86,7 +86,7 @@ public class EditController implements Initializable {
 
 
 
-        String query1 =  "UPDATE students_info SET `Versity_mail` = '" + uniMail.getText() + "', `Full_Name` = '" + fullName.getText() + "', `University` = '" + university.getText() + "', `Department` = '" + department.getText() + "' WHERE `Username` = '" + username + "'";
+        String query1 =  "UPDATE students_info SET `Versity_mail` = '" + uniMail.getText() + "', `Full Name` = '" + fullName.getText() + "', `University` = '" + university.getText() + "', `Department` = '" + department.getText() + "' WHERE `Username` = '" + username + "'";
         Statement statement1=connect.createStatement();
         statement1.executeUpdate(query1);
 
