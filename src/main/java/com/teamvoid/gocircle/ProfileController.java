@@ -74,12 +74,6 @@ public class ProfileController implements Initializable {
 
 
     }
-
-    @FXML
-    void goback(MouseEvent event) {
-
-    }
-
     @FXML
     void imageset(MouseEvent event) {
 
@@ -152,5 +146,8 @@ public class ProfileController implements Initializable {
     }
 
     public void goBack(MouseEvent mouseEvent) {
+    }
+
+    public void goback(MouseEvent mouseEvent) {
     }
 }

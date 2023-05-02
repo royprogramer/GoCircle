@@ -1,5 +1,6 @@
 package com.teamvoid.gocircle;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -7,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -18,14 +20,16 @@ import java.util.ResourceBundle;
 
 
 public class VerificationController implements Initializable {
+
     private Connection connect;
-    private  static String verificationCode="";
+    static String verificationCode="";
     @FXML
     private TextField verify_code;
     @FXML
     private Label warnningMassage;
     private String username;
     private String email;
+    @FXML
     private String password;
     EmailVerification emailVerification;
 
@@ -69,8 +73,6 @@ public class VerificationController implements Initializable {
     public void resend(MouseEvent mouseEvent) {
         emailVerification =new EmailVerification(email,username);
         verificationCode= emailVerification.verificationCode;
-
-
         warnningMassage.setText("Code resend");
     }
 

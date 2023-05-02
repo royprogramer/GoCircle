@@ -225,10 +225,10 @@ public class LoginregiController implements Initializable {
                         verificationCode = emailVerification.verificationCode;
 
 
-                        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/verification.fxml"));
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/VarificationPopUp.fxml"));
                         Parent root = loader.load();
-                        VerificationController verificationController = loader.getController();
-                        verificationController.setData(username, versityMail, passWord, verificationCode);
+                        VerificationPopUpController verificationPopUpController = loader.getController();
+                        verificationPopUpController.setData(username, versityMail, passWord, verificationCode);
                         Scene scene = new Scene(root);
                         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                         stage.setScene(scene);

@@ -4,7 +4,11 @@ import com.teamvoid.gocircle.DatabaseConnection;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -49,9 +53,9 @@ public class EditController implements Initializable {
     }
 
     @FXML
-    void submitbtn(ActionEvent event) throws SQLException, FileNotFoundException {
-    FileInputStream fileInputStream1 = new FileInputStream("temp/default-profile-photo.jpg");
-String query =  "UPDATE students_info SET `Versity_mail` = '" + uniMail.getText() + "', `Full Name` = '" + fullName.getText() + "', `University` = '" + university.getText() + "', `Department` = '" + department.getText() + "', `profile_pic` = '" + fileInputStream + "' WHERE `Username` = '" + username + "'";
+    void submitbtn(ActionEvent event) throws SQLException, IOException {
+    //FileInputStream fileInputStream = new FileInputStream("temp/default-profile-photo.jpg");
+String query =  "UPDATE students_info SET `Versity_mail` = '" + uniMail.getText() + "', `Full Name` = '" + fullName.getText() + "', `University` = '" + university.getText() + "', `Department` = '" + department.getText() + "' WHERE `Username` = '" + username + "'";
  Statement statement=connect.createStatement();
 
 //        String query = "UPDATE students_info SET `Versity_mail` = ?, `Full Name` = ?, `University` = ?, `Department` = ?, `profile_pic` = ? WHERE Username = ?";
@@ -75,7 +79,13 @@ String query =  "UPDATE students_info SET `Versity_mail` = '" + uniMail.getText(
 //        statement.setString(5, username);
 
         statement.executeUpdate(query);
-
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/dboard.fxml"));
+        Parent fxml = loader.load();
+        DboardController controller = loader.getController();
+        controller.setData(username);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(fxml));
+        stage.show();
     }
 
     public void setData(String username) {

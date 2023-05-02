@@ -1,6 +1,7 @@
 package com.teamvoid.gocircle;
 
 import com.jfoenix.controls.JFXButton;
+import com.sun.mail.imap.protocol.UID;
 import javafx.animation.TranslateTransition;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -10,8 +11,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -26,9 +30,17 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.UUID;
 
 public class DboardController implements Initializable {
+    public TextField search;
+    @FXML
+    private TextField captionwrite;
+
+    @FXML
+    private VBox poatContrainer;
     @FXML
     private Circle profilePic;
     Connection connect;
@@ -93,10 +105,13 @@ public class DboardController implements Initializable {
 
     @FXML
     void homebutton(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/timeline.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/dboard.fxml"));
         Parent fxml = loader.load();
-        changepane.getChildren().removeAll();
-        changepane.getChildren().setAll(fxml);
+        DboardController controller = loader.getController();
+        controller.setData(username);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(fxml));
+        stage.show();
 
     }
 
@@ -177,6 +192,19 @@ public class DboardController implements Initializable {
 
     }
 
+    ArrayList<Post> getPosts() throws SQLException {
+        ArrayList<Post> posts = new ArrayList<>();
+        String query = "SELECT * FROM posts";
+        Statement statement = connect.createStatement();
+        ResultSet resultSet = statement.executeQuery(query);
+        while (resultSet.next())
+        {
+            posts.add(new Post(resultSet.getString(1),resultSet.getString(2),resultSet.getString(3), resultSet.getBlob(4)));
+        }
+        return posts;
+
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -189,8 +217,28 @@ public class DboardController implements Initializable {
         menueicon2.setVisible(false);
 
         Platform.runLater(()->{
+
             DatabaseConnection connectNow= new DatabaseConnection();
             connect= connectNow.getConnect();
+            try {
+                for(Post post:getPosts())
+                {
+                    try {
+                        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/teamvoid/gocircle/fxml/post.fxml"));
+                        Parent root = fxmlLoader.load();
+                        PostController controller = fxmlLoader.getController();
+                        controller.setPost(post);
+                        poatContrainer.getChildren().add(root);
+                    }catch (Exception e)
+                    {
+                        e.printStackTrace();
+                    }
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+
+
             try {
                 Statement statement= connect.createStatement();
                 String query=" SELECT * FROM `students_info` WHERE `Username` LIKE " +"\""+username+"\"";
@@ -229,6 +277,25 @@ public class DboardController implements Initializable {
 
     public void setData(String username) {
         this.username=username;
+    }
+
+    public void genreatePost(KeyEvent keyEvent) throws SQLException {
+        System.out.println(keyEvent.getCode().getCode());
+        if(keyEvent.getCode().getCode()==10)
+        {
+            String sql ="INSERT INTO `posts` (`postID`, `content`, `Username`, `pic`) VALUES (?, ?, ?, ?)";
+            PreparedStatement statement = connect.prepareStatement(sql);
+            statement.setString(1, UUID.randomUUID().toString());
+            statement.setString(2,captionwrite.getText());
+            statement.setString(3,username);
+            statement.setString(4,null);
+            statement.executeUpdate();
+            captionwrite.setText("");
+        }
+    }
+
+    public void searching(KeyEvent keyEvent) {
+
     }
 }
 
