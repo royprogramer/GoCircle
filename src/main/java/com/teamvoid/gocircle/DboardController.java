@@ -143,7 +143,7 @@ public class DboardController implements Initializable {
         FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("fxml/todo.fxml"));
         Parent root =  fxmlLoader.load();
         TodoController todoController= fxmlLoader.getController();
-        System.out.println("k="+username);
+//        System.out.println("k="+username);
         todoController.setData(username);
         changepane.getChildren().removeAll();
         changepane.getChildren().setAll(root);

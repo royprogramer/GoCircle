@@ -60,7 +60,7 @@ public class TodoController implements Initializable {
             DatabaseConnection connectNow= new DatabaseConnection();
             connect= connectNow.getConnect();
             datepicker.setValue(LocalDate.now());
-            System.out.println(username);
+           // System.out.println(username);
 //            String query=" SELECT * FROM `todo` WHERE `Username` LIKE " +"\""+username+"\"";
 //            System.out.println(username);
 //            try {

@@ -70,6 +70,7 @@ public class PostController implements Initializable {
         Platform.runLater(()->{
             postusrname.setText(post.getUsername());
             caption.setText(post.getContent());
+
         });
 
 
