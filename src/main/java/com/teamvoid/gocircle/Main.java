@@ -18,7 +18,7 @@ public class Main extends Application {
     // FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/dfg.fxml"));
     //FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/todo.fxml"));
     // FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/post.fxml"));
-      FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/test.fxml"));
+      FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/dfg.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
         stage.initStyle(StageStyle.UNDECORATED);
