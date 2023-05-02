@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="770.0" prefWidth="1200.0" style="-fx-background-color: #000000; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teamvoid.gocircle.VerificationPopUpController">
+    <children>
+        <Circle fx:id="Circle" layoutX="600.0" layoutY="472.0" radius="844.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+            <fill>
+                <LinearGradient endX="0.8952380952380953" endY="0.661904761904762" startX="0.3952380952380952" startY="0.49523809523809526">
+                    <stops>
+                        <Stop>
+                            <color>
+                                <Color red="0.01315789483487606" green="0.013020833022892475" blue="0.012975146062672138" />
+                            </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                            <color>
+                                <Color red="0.22368420660495758" green="0.14035087823867798" blue="0.4736842215061188" />
+                            </color>
+                        </Stop>
+                    </stops>
+                </LinearGradient>
+            </fill>
+        </Circle>
+        <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="742.0" prefWidth="1172.0" style="-fx-background-color: #000000; -fx-background-radius: 15;" />
+        <Pane fx:id="layer1" layoutX="14.0" layoutY="14.0" prefHeight="742.0" prefWidth="586.0" style="-fx-background-color: #000000; -fx-background-radius: 15 0 0 15;">
+            <children>
+                <Circle fx:id="Circle1" layoutX="44.0" layoutY="49.0" radius="28.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
+                    <fill>
+                        <LinearGradient endX="0.8952380952380953" endY="0.661904761904762" startX="0.3952380952380952" startY="0.49523809523809526">
+                            <stops>
+                                <Stop>
+                                    <color>
+                                        <Color red="0.01315789483487606" green="0.013020833022892475" blue="0.012975146062672138" />
+                                    </color>
+                                </Stop>
+                                <Stop offset="1.0">
+                                    <color>
+                                        <Color red="0.9342105388641357" green="0.3935794234275818" blue="0.42962151765823364" />
+                                    </color>
+                                </Stop>
+                            </stops>
+                        </LinearGradient>
+                    </fill>
+                </Circle>
+                <Label fx:id="Goback" layoutX="120.0" layoutY="134.0" onMouseClicked="#goBack" prefHeight="35.0" prefWidth="125.0" text="Go Back" textFill="WHITE">
+                    <font>
+                        <Font name="Concert One" size="30.0" />
+                    </font>
+                </Label>
+                <Pane fx:id="icon2" layoutX="118.0" layoutY="329.0" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: #313239; -fx-background-radius: 8 0 0 8;">
+                    <children>
+                        <ImageView fitHeight="29.0" fitWidth="33.0" layoutX="6.0" layoutY="9.0">
+                            <image>
+                                <Image url="@../Image/icons8-lock-48.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </Pane>
+                
+                <JFXButton fx:id="Verify" buttonType="RAISED" layoutX="118.0" layoutY="427.0" onAction="#varify" prefHeight="45.0" prefWidth="345.0" ripplerFill="#251eb2" style="-fx-background-color: #9E88DE; -fx-background-radius: 10;" text="Verify" textAlignment="CENTER" textFill="WHITE">
+                    <font>
+                        <Font name="Concert One" size="23.0" />
+                    </font>
+                    <effect>
+                        <Glow level="0.4" />
+                    </effect>
+                </JFXButton>
+                <Label fx:id="noaccLabel" layoutX="165.0" layoutY="484.0" text="Didn't get an code?" textFill="#f5f5f5">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Label>
+                <Label fx:id="Resend" layoutX="337.0" layoutY="483.0" onMouseClicked="#resend" prefHeight="21.0" prefWidth="56.0" text="Resend" textFill="#cab8ff" underline="true">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                    <effect>
+                        <Glow level="0.25" />
+                    </effect>
+                </Label>
+                <Label alignment="CENTER" layoutX="19.0" layoutY="26.0" prefHeight="46.0" prefWidth="50.0" style="-fx-background-color: #000000; -fx-background-radius: 50;" text="GO" textAlignment="JUSTIFY" textFill="#584a9e">
+                    <font>
+                        <Font name="System Bold" size="26.0" />
+                    </font>
+                </Label>
+            <PasswordField fx:id="otp" focusTraversable="false" layoutX="165.0" layoutY="329.0" prefHeight="45.0" prefWidth="300.0" promptText="password" style="-fx-background-color: #8e939c; -fx-background-radius: 0 8 8 0;">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </PasswordField>
+            <Label fx:id="waringmassge" alignment="TOP_CENTER" layoutX="125.0" layoutY="382.0" prefHeight="45.0" prefWidth="323.0" text="OTP was send" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Concert One" size="30.0" />
+               </font>
+            </Label>
+            </children></Pane>
+        <Pane fx:id="layer2" layoutX="600.0" layoutY="14.0" prefHeight="742.0" prefWidth="586.0" style="-fx-background-color: #000000; -fx-background-radius: 0 15 150;">
+            <children>
+                <ImageView fitHeight="641.0" fitWidth="508.0" layoutX="45.0" layoutY="51.0">
+                    <image>
+                        <Image url="@../Image/d2.png" />
+                    </image>
+                </ImageView>
+            </children></Pane>
+        <HBox alignment="CENTER_RIGHT" layoutX="1125.0" layoutY="23.0" prefHeight="27.0" prefWidth="50.0">
+            <children>
+                <Pane prefHeight="52.0" prefWidth="25.0" style="-fx-background-radius: 5;" styleClass="close-btn2" stylesheets="@../style.css">
+                    <padding>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                    </padding>
+                    <children>
+                        <ImageView fitHeight="41.0" fitWidth="23.0" layoutX="1.0" layoutY="-3.0" onMouseClicked="#minimize">
+                            <image>
+                                <Image url="@../Image/icons8-subtract-64.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </Pane>
+                <Pane prefHeight="52.0" prefWidth="25.0" style="-fx-background-radius: 5;" styleClass="close-btn2" stylesheets="@../style.css">
+                    <children>
+                        <ImageView accessibleRole="BUTTON" fitHeight="20.0" fitWidth="21.0" layoutX="2.0" layoutY="3.0" onMouseClicked="#close">
+                            <image>
+                                <Image url="@../Image/icons8-close-60.png" />
+                            </image>
+                            <cursor>
+                                <Cursor fx:constant="DEFAULT" />
+                            </cursor>
+                        </ImageView>
+                    </children>
+                    <padding>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                    </padding>
+                </Pane>
+            </children></HBox>
+    </children>
+</AnchorPane>
