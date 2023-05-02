@@ -23,13 +23,11 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.sql.*;
 import java.util.ArrayList;
@@ -37,6 +35,7 @@ import java.util.ResourceBundle;
 import java.util.UUID;
 
 public class DboardController implements Initializable {
+    FileInputStream  postInputStream;
     public TextField search;
     @FXML
     private TextField captionwrite;
@@ -299,22 +298,54 @@ public class DboardController implements Initializable {
         this.username=username;
     }
 
-    public void genreatePost(KeyEvent keyEvent) throws SQLException {
-       // System.out.println(keyEvent.getCode().getCode());
-        if(keyEvent.getCode().getCode()==10)
+    public void genreatePost(ActionEvent event) throws SQLException {
+        if(!captionwrite.getText().equals(""))
         {
+            System.out.println("HEY");
             String sql ="INSERT INTO `posts` (`postID`, `content`, `Username`, `pic`) VALUES (?, ?, ?, ?)";
             PreparedStatement statement = connect.prepareStatement(sql);
             statement.setString(1, UUID.randomUUID().toString());
             statement.setString(2,captionwrite.getText());
             statement.setString(3,username);
-            statement.setString(4,null);
+            statement.setBinaryStream(4,postInputStream);
             statement.executeUpdate();
             captionwrite.setText("");
+
+            DatabaseConnection connectNow= new DatabaseConnection();
+            connect= connectNow.getConnect();
+            try {
+                for(Post post:getPosts())
+                {
+                    try {
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/teamvoid/gocircle/fxml/post.fxml"));
+                        Parent root = loader.load();
+                        PostController controller = loader.getController();
+                        controller.setPost(post);
+                        poatContrainer.getChildren().add(root);
+                    }catch (Exception e)
+                    {
+                        e.printStackTrace();
+                    }
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+
         }
     }
 
     public void searching(KeyEvent keyEvent) {
+
+    }
+
+    public void imageChoose(MouseEvent mouseEvent) throws FileNotFoundException {
+        FileChooser fileChooser = new FileChooser();
+        Stage stage = new Stage();
+       File file = fileChooser.showOpenDialog(stage);
+        stage.show();
+        stage.close();
+        postInputStream = new FileInputStream(file);
+
 
     }
 }

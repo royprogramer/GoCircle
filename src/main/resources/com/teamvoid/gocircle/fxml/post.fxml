@@ -58,10 +58,7 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <ImageView fx:id="mypost" fitHeight="535.0" fitWidth="535.0" onMouseClicked="#imageUp" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../Image/createpost.png" />
-         </image></ImageView>
+      <ImageView fx:id="mypost" fitHeight="535.0" fitWidth="535.0" onMouseClicked="#imageUp" pickOnBounds="true" preserveRatio="true" />
       <StackPane prefHeight="67.0" prefWidth="565.0" style="-fx-background-color: #161C2C;">
          <children>
             <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">

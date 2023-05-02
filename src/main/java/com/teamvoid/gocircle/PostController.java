@@ -6,9 +6,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -68,8 +71,29 @@ public class PostController implements Initializable {
 //        saveclick.setVisible(false);
 
         Platform.runLater(()->{
-            postusrname.setText(post.getUsername());
-            caption.setText(post.getContent());
+            try {
+                if(post.getBlob()!=null)
+                {
+                    postusrname.setText(post.getUsername());
+                    caption.setText(post.getContent());
+                    String path = "temp/" + post.getPostID() + ".png";
+                    byte byteArray[] = post.getBlob().getBytes(1, (int) post.getBlob().length());
+                    FileOutputStream outPutStream = new FileOutputStream(path);
+                    outPutStream.write(byteArray);
+                    outPutStream.close();
+                    FileInputStream imgStream = new FileInputStream(path);
+                    mypost.setImage(new Image(imgStream));
+
+                }
+                else{
+
+                }
+
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
+            }
 
         });
 
