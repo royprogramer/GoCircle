@@ -83,3 +83,9 @@
 .scroll-pane .scroll-bar:horizontal .thumb{
     -fx-background-color: #686868;
 }
+.shadow{
+    -fx-effect: dropShadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 10);
+}
+.transparent{
+    -fx-border-color: rgb(0,0,0,0);
+}
