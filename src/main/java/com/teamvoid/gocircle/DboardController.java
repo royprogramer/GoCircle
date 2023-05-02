@@ -2,6 +2,7 @@ package com.teamvoid.gocircle;
 
 import com.jfoenix.controls.JFXButton;
 import com.sun.mail.imap.protocol.UID;
+import com.teamvoid.gocircle.Todo.TodoController;
 import com.teamvoid.gocircle.chat.chat.controller.ClientFormController;
 import javafx.animation.TranslateTransition;
 import javafx.application.Platform;
@@ -139,6 +140,13 @@ public class DboardController implements Initializable {
 
     @FXML
     void studybutton(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("fxml/todo.fxml"));
+        Parent root =  fxmlLoader.load();
+        TodoController todoController= fxmlLoader.getController();
+        System.out.println("k="+username);
+        todoController.setData(username);
+        changepane.getChildren().removeAll();
+        changepane.getChildren().setAll(root);
 
     }
     @FXML
@@ -217,15 +225,15 @@ public class DboardController implements Initializable {
         keepbtn.setVisible(false);
         menueicon2.setVisible(false);
 
-        FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("fxml/timeline.fxml"));
-        Parent fxml = null;
-        try {
-            fxml = fxmlLoader.load();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        changepane.getChildren().removeAll();
-        changepane.getChildren().setAll(fxml);
+//        FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("fxml/timeline.fxml"));
+//        Parent fxml = null;
+//        try {
+//            fxml = fxmlLoader.load();
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
+//        changepane.getChildren().removeAll();
+//        changepane.getChildren().setAll(fxml);
 
 
 
@@ -237,9 +245,9 @@ public class DboardController implements Initializable {
                 for(Post post:getPosts())
                 {
                     try {
-                        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/teamvoid/gocircle/fxml/post.fxml"));
-                        Parent root = fxmlLoader.load();
-                        PostController controller = fxmlLoader.getController();
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/teamvoid/gocircle/fxml/post.fxml"));
+                        Parent root = loader.load();
+                        PostController controller = loader.getController();
                         controller.setPost(post);
                         poatContrainer.getChildren().add(root);
                     }catch (Exception e)
@@ -261,7 +269,7 @@ public class DboardController implements Initializable {
                     Blob profileBlob= resultSet.getBlob(7);
                     if(profileBlob!=null){
                         String path = "temp/"+username+".png";
-                        System.out.print(path);
+                        //System.out.print(path);
                         byte byteArray[] = profileBlob.getBytes(1, (int) profileBlob.length());
                         FileOutputStream outPutStream = new FileOutputStream(path);
                         outPutStream.write(byteArray);
@@ -294,7 +302,7 @@ public class DboardController implements Initializable {
     }
 
     public void genreatePost(KeyEvent keyEvent) throws SQLException {
-        System.out.println(keyEvent.getCode().getCode());
+       // System.out.println(keyEvent.getCode().getCode());
         if(keyEvent.getCode().getCode()==10)
         {
             String sql ="INSERT INTO `posts` (`postID`, `content`, `Username`, `pic`) VALUES (?, ?, ?, ?)";
