@@ -13,6 +13,10 @@ module com.example.gocircle {
     opens com.teamvoid.gocircle.Server to javafx.fxml;
     exports com.teamvoid.gocircle.Client;
     opens com.teamvoid.gocircle.Client to javafx.fxml;
+    opens  com.teamvoid.gocircle.chat.chat.controller to javafx.fxml;
+    exports com.teamvoid.gocircle.chat.chat.controller;
+    opens  com.teamvoid.gocircle.chat.chat to javafx.fxml;
+    exports com.teamvoid.gocircle.chat.chat;
 
 
 }

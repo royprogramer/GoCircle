@@ -2,6 +2,7 @@ package com.teamvoid.gocircle;
 
 import com.jfoenix.controls.JFXButton;
 import com.sun.mail.imap.protocol.UID;
+import com.teamvoid.gocircle.chat.chat.controller.ClientFormController;
 import javafx.animation.TranslateTransition;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -86,8 +87,8 @@ public class DboardController implements Initializable {
     void chaticon(MouseEvent event) throws IOException {
         FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("fxml/chatbox.fxml"));
         Parent fxml = fxmlLoader.load();
-        ChatboxController chatboxController =fxmlLoader.getController();
-        chatboxController.setData(username);
+        ClientFormController clientFormController =fxmlLoader.getController();
+        clientFormController.setUsername(username);
 
         changepane.getChildren().removeAll();
         changepane.getChildren().setAll(fxml);
