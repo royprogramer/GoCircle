@@ -3,7 +3,10 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -12,10 +15,13 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="770.0" prefWidth="1200.0" styleClass="backgroundColor8" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teamvoid.gocircle.DboardController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="770.0" prefWidth="1200.0" styleClass="backgroundColor8" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teamvoid.gocircle.DboardController">
    <children>
       <BorderPane prefHeight="770.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
@@ -127,7 +133,7 @@
                <top>
                   <HBox prefHeight="74.0" prefWidth="998.0" spacing="15.0" BorderPane.alignment="CENTER">
                      <children>
-                        <TextField focusTraversable="false" opacity="0.3" prefHeight="38.0" prefWidth="363.0" promptText="  Search" style="-fx-background-radius: 20;">
+                        <TextField fx:id="search" focusTraversable="false" onKeyPressed="#searching" opacity="0.3" prefHeight="38.0" prefWidth="363.0" promptText="  Search" style="-fx-background-radius: 20;">
                            <HBox.margin>
                               <Insets top="20.0" />
                            </HBox.margin>
@@ -241,7 +247,135 @@
                <center>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 10;" BorderPane.alignment="CENTER">
                      <children>
-                        <StackPane fx:id="changepane" layoutX="280.0" layoutY="200.0" prefHeight="150.0" prefWidth="200.0" stylesheets="@../style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <StackPane fx:id="changepane" layoutX="280.0" layoutY="200.0" prefHeight="150.0" prefWidth="200.0" stylesheets="@../style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane prefHeight="700.0" prefWidth="918.0">
+                                 <children>
+                                    <BorderPane layoutX="14.0" layoutY="139.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <center>
+                                          <ScrollPane prefWidth="565.0" stylesheets="@../style.css" BorderPane.alignment="CENTER">
+                                             <content>
+                                                <VBox fx:id="poatContrainer" prefHeight="492.0" prefWidth="531.0" />
+                                             </content>
+                                          </ScrollPane>
+                                       </center>
+                                       <left>
+                                          <Pane prefHeight="575.0" prefWidth="226.0" style="-fx-background-color: #000000;" BorderPane.alignment="CENTER">
+                                             <children>
+                                                <ImageView fitHeight="200.0" fitWidth="200.0" layoutY="37.0">
+                                                   <image>
+                                                      <Image url="@../Image/g0R9.gif" />
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="38.0" fitWidth="40.0" layoutX="59.0" layoutY="123.0">
+                                                   <image>
+                                                      <Image url="@../Image/G.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="39.0" fitWidth="38.0" layoutX="103.0" layoutY="121.0">
+                                                   <image>
+                                                      <Image url="@../Image/o.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </Pane>
+                                       </left>
+                                       <right>
+                                          <Pane prefHeight="575.0" prefWidth="158.0" style="-fx-background-color: #000000;" BorderPane.alignment="CENTER" />
+                                       </right>
+                                       <top>
+                                          <HBox prefHeight="125.0" prefWidth="918.0" style="-fx-background-color: #0E121C;" BorderPane.alignment="CENTER">
+                                             <children>
+                                                <VBox prefHeight="125.0" prefWidth="232.0">
+                                                   <children>
+                                                      <Label prefHeight="28.0" prefWidth="117.0" text="Hi There" textFill="#c35cda">
+                                                         <font>
+                                                            <Font name="Gugi Regular" size="21.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label prefHeight="25.0" prefWidth="262.0" text="Circlers">
+                                                         <font>
+                                                            <Font name="Gugi Regular" size="39.0" />
+                                                         </font>
+                                                         <textFill>
+                                                            <LinearGradient endX="1.0" endY="1.0">
+                                                               <stops>
+                                                                  <Stop>
+                                                                     <color>
+                                                                        <Color red="0.9868420958518982" green="0.3792032301425934" blue="0.3792032301425934" />
+                                                                     </color>
+                                                                  </Stop>
+                                                                  <Stop offset="0.981203007518797">
+                                                                     <color>
+                                                                        <Color red="0.5884259343147278" green="0.49098441004753113" blue="0.8157894611358643" />
+                                                                     </color>
+                                                                  </Stop>
+                                                                  <Stop offset="1.0">
+                                                                     <color>
+                                                                        <Color red="0.7276945114135742" green="0.39388400316238403" blue="0.8026315569877625" />
+                                                                     </color>
+                                                                  </Stop>
+                                                               </stops>
+                                                            </LinearGradient>
+                                                         </textFill>
+                                                      </Label>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="25.0" right="10.0" top="25.0" />
+                                                   </padding>
+                                                </VBox>
+                                                <HBox prefHeight="125.0" prefWidth="719.0">
+                                                   <children>
+                                                      <HBox prefHeight="100.0" prefWidth="733.0" style="-fx-background-color: #242531; -fx-background-radius: 30;">
+                                                         <padding>
+                                                            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                                         </padding>
+                                                         <children>
+                                                            <Pane prefHeight="95.0" prefWidth="106.0">
+                                                               <children>
+                                                                  <Circle fx:id="profilePic1" fill="DODGERBLUE" layoutX="49.0" layoutY="36.0" radius="35.0" stroke="BLACK" strokeType="INSIDE" />
+                                                               </children>
+                                                            </Pane>
+                                                            <TextField fx:id="captionwrite" focusTraversable="false" onKeyPressed="#genreatePost" opacity="0.3" prefHeight="53.0" prefWidth="498.0" promptText="Circlers, Any Thoughs or Requires?" style="-fx-background-radius: 20;">
+                                                               <font>
+                                                                  <Font size="18.0" />
+                                                               </font>
+                                                               <HBox.margin>
+                                                                  <Insets top="10.0" />
+                                                               </HBox.margin>
+                                                            </TextField>
+                                                            <ImageView fx:id="picUp" fitHeight="38.0" fitWidth="36.0">
+                                                               <image>
+                                                                  <Image url="@../Image/icons8-photo-gallery-48.png" />
+                                                               </image>
+                                                               <HBox.margin>
+                                                                  <Insets left="10.0" top="18.0" />
+                                                               </HBox.margin>
+                                                            </ImageView>
+                                                         </children>
+                                                         <effect>
+                                                            <DropShadow height="25.08" radius="11.7625" spread="0.09" width="23.97">
+                                                               <color>
+                                                                  <Color red="0.15989278256893158" green="0.14394493401050568" blue="0.22368420660495758" />
+                                                               </color>
+                                                            </DropShadow>
+                                                         </effect>
+                                                      </HBox>
+                                                   </children>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                       </top>
+                                    </BorderPane>
+                                 </children>
+                              </AnchorPane>
+                           </children></StackPane>
                      </children>
                   </AnchorPane>
                </center>

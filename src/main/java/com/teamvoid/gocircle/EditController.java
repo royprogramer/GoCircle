@@ -1,9 +1,14 @@
 package com.teamvoid.gocircle;
 
+import com.teamvoid.gocircle.DatabaseConnection;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -48,12 +53,39 @@ public class EditController implements Initializable {
     }
 
     @FXML
-    void submitbtn(ActionEvent event) throws SQLException {
-        Statement statement=connect.createStatement();
-        String query =  "UPDATE students_info SET `Versity_mail` = '" + uniMail.getText() + "', `Full Name` = '" + fullName.getText() + "', `University` = '" + university.getText() + "', `Department` = '" + department.getText() + "' WHERE `Username` = '" + username + "'";
+    void submitbtn(ActionEvent event) throws SQLException, IOException {
+    //FileInputStream fileInputStream = new FileInputStream("temp/default-profile-photo.jpg");
+String query =  "UPDATE students_info SET `Versity_mail` = '" + uniMail.getText() + "', `Full Name` = '" + fullName.getText() + "', `University` = '" + university.getText() + "', `Department` = '" + department.getText() + "' WHERE `Username` = '" + username + "'";
+ Statement statement=connect.createStatement();
+
+//        String query = "UPDATE students_info SET `Versity_mail` = ?, `Full Name` = ?, `University` = ?, `Department` = ?, `profile_pic` = ? WHERE Username = ?";
+//
+//        PreparedStatement statement = connect.prepareStatement(query);
+//        statement.setString(1,uniMail.getText());
+//        statement.setString(2,fullName.getText());
+//        statement.setString(3,university.getText());
+//        statement.setString(4,department.getText());
+//        statement.setBlob(5,fileInputStream);
+//        statement.setString(6,username);
+//Statement statement= connect.createStatement();
+//        String query = "UPDATE students_info SET `Versity_mail` = ?, `Full Name` = ?, `University` = ?, `Department` = ? WHERE Username = ?";
+//        PreparedStatement statement = connect.prepareStatement(query);
+//
+//        statement.setString(1, uniMail.getText());
+//        statement.setString(2, fullName.getText());
+//        statement.setString(3, university.getText());
+//        statement.setString(4, department.getText());
+////        statement.setBinaryStream(5, fileInputStream);
+//        statement.setString(5, username);
 
         statement.executeUpdate(query);
-
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/dboard.fxml"));
+        Parent fxml = loader.load();
+        DboardController controller = loader.getController();
+        controller.setData(username);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(fxml));
+        stage.show();
     }
 
     public void setData(String username) {
@@ -117,15 +149,14 @@ public class EditController implements Initializable {
             }
         });
     }
-
-    public void uploadPic(ActionEvent actionEvent) throws FileNotFoundException {
+    public void uploadPic(ActionEvent actionEvent) throws IOException {
         FileChooser fileChooser = new FileChooser();
         Stage stage = new Stage();
         File file = fileChooser.showOpenDialog(stage);
-        System.out.println(file.getPath());
         stage.show();
         stage.close();
-       fileInputStream = new FileInputStream(file.getPath());
-       profilePic.setFill(new ImagePattern(new Image(fileInputStream)));
-    }
-}
+        System.out.println(file);
+        fileInputStream = new FileInputStream(file);
+        profilePic.setFill(new ImagePattern(new Image(fileInputStream)));
+
+}}

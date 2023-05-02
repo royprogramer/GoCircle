@@ -1,7 +1,7 @@
 package com.teamvoid.gocircle;
 
 import com.teamvoid.gocircle.Timeline.Account;
-import com.teamvoid.gocircle.Timeline.Post;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
@@ -43,6 +43,12 @@ public class PostController implements Initializable {
 
     @FXML
     private ImageView starclick;
+    @FXML
+    private Post post;
+
+    public void setPost(Post post) {
+        this.post = post;
+    }
 
     @FXML
     void comment(MouseEvent event) {
@@ -60,6 +66,12 @@ public class PostController implements Initializable {
 //        saveclick.setVisible(false);
 //        commentclick.setVisible(false);
 //        saveclick.setVisible(false);
+
+        Platform.runLater(()->{
+            postusrname.setText(post.getUsername());
+            caption.setText(post.getContent());
+        });
+
 
     }
 }
