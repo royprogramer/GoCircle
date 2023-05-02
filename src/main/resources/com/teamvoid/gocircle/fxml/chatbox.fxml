@@ -49,11 +49,13 @@
                   </VBox>
                </top>
                <center>
+
                   <ImageView fitHeight="528.0" fitWidth="257.0" BorderPane.alignment="CENTER">
                      <image>
                         <Image url="@../Image/d2.png" />
                      </image>
                   </ImageView>
+
                </center>
             </BorderPane>
          </left>
@@ -118,7 +120,9 @@
                      <center>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #272634;" BorderPane.alignment="CENTER">
                            <children>
+
                               <ScrollPane layoutX="-76.0" layoutY="93.0" prefHeight="200.0" prefWidth="688.0" stylesheets="@../style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+
                                  <content>
                                     <HBox fx:id="hboxmessage">
                                        <children>

@@ -75,4 +75,7 @@ public class PostController implements Initializable {
 
 
     }
+
+    public void imageUp(MouseEvent mouseEvent) {
+    }
 }

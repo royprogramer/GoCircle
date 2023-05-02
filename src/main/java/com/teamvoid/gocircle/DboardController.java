@@ -235,8 +235,6 @@ public class DboardController implements Initializable {
 //        changepane.getChildren().removeAll();
 //        changepane.getChildren().setAll(fxml);
 
-
-
         Platform.runLater(()->{
 
             DatabaseConnection connectNow= new DatabaseConnection();
