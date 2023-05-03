@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #272634;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teamvoid.gocircle.chat.chat.controller.ClientFormController">
+<AnchorPane prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #272634;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teamvoid.gocircle.chat.chat.controller.ClientFormController">
    <children>
       <BorderPane layoutX="128.0" layoutY="112.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #272634;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
@@ -71,9 +71,9 @@
                                           <ImageView fx:id="chatProfilepic" fitHeight="69.0" fitWidth="69.0" layoutX="-2.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" />
                                        </children>
                                     </Pane>
-                                    <Label fx:id="lblUsername" layoutX="83.0" layoutY="49.0" prefHeight="29.0" prefWidth="153.0" text="profilename" textFill="#b71fb1">
+                                    <Label fx:id="chatProfilename" layoutX="83.0" layoutY="49.0" prefHeight="29.0" prefWidth="153.0" text="profilename" textFill="#8317e1" wrapText="true">
                                        <font>
-                                          <Font name="Concert One" size="20.0" />
+                                          <Font size="24.0" />
                                        </font>
                                     </Label>
                                  </children>

@@ -95,6 +95,7 @@ public class DboardController implements Initializable {
         ClientFormController clientFormController =fxmlLoader.getController();
         clientFormController.setUsername(username);
 
+
         changepane.getChildren().removeAll();
         changepane.getChildren().setAll(fxml);
 

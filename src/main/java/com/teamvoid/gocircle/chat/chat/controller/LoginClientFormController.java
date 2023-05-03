@@ -51,7 +51,7 @@ public class LoginClientFormController {
         Parent load = FXMLLoader.load(resource);
         Scene scene = new Scene(load);
         Stage stage = new Stage();
-        stage.setTitle("Play Tech Chat Application");
+        stage.setTitle("");
         stage.setScene(scene);
         enableMove(scene,stage);
         stage.show();

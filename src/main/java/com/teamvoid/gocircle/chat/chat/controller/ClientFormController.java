@@ -16,6 +16,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.FileChooser;
@@ -42,6 +43,8 @@ public class ClientFormController extends Thread {
     public ImageView btnImage;
     public HBox hboxmessage;
     public VBox vboxmessage;
+    public Label chatProfilename;
+    public ImageView chatProfilepic;
 
     Socket socket;
     BufferedReader bufferedReader;
@@ -57,8 +60,19 @@ public class ClientFormController extends Thread {
     }
 
     public void initialize() {
-        connectSocket();
-        lblUsername.setText(username);
+        Platform.runLater(()->{
+            connectSocket();
+            FileInputStream imgStream = null;
+            try {
+                chatProfilename.setText(username);
+                imgStream = new FileInputStream("temp/"+username+".png");
+            } catch (FileNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+            chatProfilepic.setImage(new Image(imgStream));
+        });
+
+
     }
 
     private void connectSocket() {
