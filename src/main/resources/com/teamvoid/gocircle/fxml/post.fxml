@@ -8,41 +8,24 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="565.0" spacing="10.0" style="-fx-background-color: #0E121C;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teamvoid.gocircle.PostController">
    <children>
       <HBox alignment="CENTER_LEFT" prefHeight="60.0" style="-fx-background-color: #161C2C;">
          <children>
+            <Circle fx:id="postCardPic" fill="DODGERBLUE" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
             <ImageView fx:id="profileimage" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="postusrname" text="Username" textFill="WHITE">
+               <font>
+                  <Font name="Concert One" size="18.0" />
+               </font>
+            </Label>
             <VBox alignment="CENTER">
                <children>
-                  <HBox>
-                     <children>
-                        <Label fx:id="postusrname" text="Username" textFill="WHITE">
-                           <font>
-                              <Font name="Concert One" size="18.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT">
-                     <children>
-                        <Label fx:id="date" text="1h" textFill="#6d6f72">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <ImageView fx:id="globe" fitHeight="15.0" fitWidth="14.0">
-                           <image>
-                              <Image url="@../Image/icons8-timezone-globe-25.png" />
-                           </image>
-                           <HBox.margin>
-                              <Insets left="4.0" top="2.0" />
-                           </HBox.margin>
-                        </ImageView>
-                     </children>
-                  </HBox>
+                  <HBox />
+                  <HBox alignment="CENTER_LEFT" />
                </children>
             </VBox>
          </children>
