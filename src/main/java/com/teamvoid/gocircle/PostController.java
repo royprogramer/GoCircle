@@ -72,23 +72,18 @@ public class PostController implements Initializable {
 
         Platform.runLater(()->{
             try {
-                if(post.getBlob()!=null)
-                {
+
                     postusrname.setText(post.getUsername());
                     caption.setText(post.getContent());
                     String path = "temp/" + post.getPostID() + ".png";
+                if(post.getBlob()!=null) {
                     byte byteArray[] = post.getBlob().getBytes(1, (int) post.getBlob().length());
                     FileOutputStream outPutStream = new FileOutputStream(path);
                     outPutStream.write(byteArray);
                     outPutStream.close();
                     FileInputStream imgStream = new FileInputStream(path);
                     mypost.setImage(new Image(imgStream));
-
                 }
-                else{
-
-                }
-
             }
             catch (Exception e)
             {

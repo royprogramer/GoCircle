@@ -21,5 +21,7 @@ module com.example.gocircle {
 
     exports com.teamvoid.gocircle.Todo;
     opens com.teamvoid.gocircle.Todo to javafx.fxml;
+    exports com.teamvoid.gocircle.circlemod to javafx.fxml;
+    opens  com.teamvoid.gocircle.circlemod;
 
 }

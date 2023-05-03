@@ -60,24 +60,30 @@ public class TodoController implements Initializable {
             DatabaseConnection connectNow= new DatabaseConnection();
             connect= connectNow.getConnect();
             datepicker.setValue(LocalDate.now());
-           // System.out.println(username);
-//            String query=" SELECT * FROM `todo` WHERE `Username` LIKE " +"\""+username+"\"";
-//            System.out.println(username);
-//            try {
-//                Statement statement =connect.createStatement();
-//                ResultSet resultSet= statement.executeQuery(query);
-//                String date=resultSet.getString(2);
-//                String event=resultSet.getString(3);
-//                todotext.setText(event);
-//                String [] trim=date.split("/");
-//                Integer int1= Integer.parseInt(trim[0]);
-//                Integer int2= Integer.parseInt(trim[1]);
-//                Integer int3= Integer.parseInt(trim[2]);
-//
-//                LocalDate localDate = LocalDate.of(int1,int2,int3);
-//            } catch (SQLException e) {
-//                throw new RuntimeException(e);
-//            }
+
+            String query=" SELECT * FROM `todo` WHERE `Username` LIKE " +"\""+username+"\"";
+            System.out.println(username);
+            try {
+                Statement statement =connect.createStatement();
+                ResultSet resultSet= statement.executeQuery(query);
+                while (resultSet.next())
+                {
+                    String date=resultSet.getString(2);
+                    String todoEvents=resultSet.getString(3);
+                    String [] trim=date.split("-");
+                    Integer int1= Integer.parseInt(trim[0]);
+                    Integer int2= Integer.parseInt(trim[1]);
+                    Integer int3= Integer.parseInt(trim[2]);
+
+                    LocalDate localDate = LocalDate.of(int1,int2,int3);
+                    list.add(new LocalEvent(todoEvents, localDate));
+                    eventlist.setItems(list);
+
+                }
+
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
 
         });
 

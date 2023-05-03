@@ -10,6 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -30,11 +31,15 @@ import javafx.util.Duration;
 import java.io.*;
 import java.net.URL;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.ResourceBundle;
-import java.util.UUID;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
+import java.util.Date;
 
 public class DboardController implements Initializable {
+    @FXML
+    private Circle postShowPic;
     FileInputStream  postInputStream;
     public TextField search;
     @FXML
@@ -100,12 +105,20 @@ public class DboardController implements Initializable {
 
     }
     @FXML
-    void circlebutton(ActionEvent event) {
+    void circlebutton(MouseEvent event) throws IOException {
+        FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("fxml/circle.fxml"));
+        Parent root=fxmlLoader.load();
+      CircleController circleController=  fxmlLoader.getController();
+      circleController.setUsername(username);
+      circleController.setChangepane(changepane);
+
+        changepane.getChildren().removeAll();
+        changepane.getChildren().setAll(root);
 
     }
 
     @FXML
-    void homebutton(ActionEvent event) throws IOException {
+    void homebutton(MouseEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/dboard.fxml"));
         Parent fxml = loader.load();
         DboardController controller = loader.getController();
@@ -117,13 +130,13 @@ public class DboardController implements Initializable {
     }
 
     @FXML
-    void keepbutton(ActionEvent event) {
+    void keepbutton(MouseEvent event) {
 
     }
 
 
     @FXML
-    void profilebutton(ActionEvent event) throws IOException {
+    void profilebutton(MouseEvent event) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/profile-page.fxml"));
         Parent fxml = loader.load();
@@ -138,7 +151,7 @@ public class DboardController implements Initializable {
     }
 
     @FXML
-    void studybutton(ActionEvent event) throws IOException {
+    void studybutton(MouseEvent event) throws IOException {
         FXMLLoader fxmlLoader=new FXMLLoader(getClass().getResource("fxml/todo.fxml"));
         Parent root =  fxmlLoader.load();
         TodoController todoController= fxmlLoader.getController();
@@ -200,15 +213,17 @@ public class DboardController implements Initializable {
 
     }
 
+
     ArrayList<Post> getPosts() throws SQLException {
         ArrayList<Post> posts = new ArrayList<>();
-        String query = "SELECT * FROM posts";
+        String query = "SELECT * FROM `posts` ORDER BY `posts`.`PostDate` DESC";
         Statement statement = connect.createStatement();
         ResultSet resultSet = statement.executeQuery(query);
         while (resultSet.next())
         {
-            posts.add(new Post(resultSet.getString(1),resultSet.getString(2),resultSet.getString(3), resultSet.getBlob(4)));
+            posts.add(new Post(resultSet.getString(1),resultSet.getString(2),resultSet.getString(3), resultSet.getBlob(4),resultSet.getString(5)));
         }
+        //Collections.sort(posts);
         return posts;
 
     }
@@ -301,19 +316,23 @@ public class DboardController implements Initializable {
     public void genreatePost(ActionEvent event) throws SQLException {
         if(!captionwrite.getText().equals(""))
         {
-            System.out.println("HEY");
-            String sql ="INSERT INTO `posts` (`postID`, `content`, `Username`, `pic`) VALUES (?, ?, ?, ?)";
+            String sql ="INSERT INTO `posts` (`postID`, `content`, `Username`, `pic`, `PostDate`) VALUES (?, ?, ?, ?, ?)";
             PreparedStatement statement = connect.prepareStatement(sql);
             statement.setString(1, UUID.randomUUID().toString());
             statement.setString(2,captionwrite.getText());
             statement.setString(3,username);
             statement.setBinaryStream(4,postInputStream);
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmssSSS");
+            String timestamp = LocalDateTime.now().format(formatter);
+            statement.setString(5,timestamp);
             statement.executeUpdate();
             captionwrite.setText("");
+            postShowPic.setFill(null);
 
             DatabaseConnection connectNow= new DatabaseConnection();
             connect= connectNow.getConnect();
             try {
+                poatContrainer.getChildren().clear();
                 for(Post post:getPosts())
                 {
                     try {
@@ -344,7 +363,10 @@ public class DboardController implements Initializable {
        File file = fileChooser.showOpenDialog(stage);
         stage.show();
         stage.close();
+
         postInputStream = new FileInputStream(file);
+        FileInputStream postShowInputStream=new FileInputStream(file);
+        postShowPic.setFill(new ImagePattern(new Image(postShowInputStream)));
 
 
     }

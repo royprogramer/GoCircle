@@ -4,9 +4,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 public class test {
     public static void main(String[] args) {
+        System.out.println(Timestamp.valueOf(LocalDateTime.now()));
         Connection connect;
         String path= "temp/Koushik.png";
 
