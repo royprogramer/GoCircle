@@ -95,6 +95,7 @@ public class DboardController implements Initializable {
         ClientFormController clientFormController =fxmlLoader.getController();
         clientFormController.setUsername(username);
 
+
         changepane.getChildren().removeAll();
         changepane.getChildren().setAll(fxml);
 
@@ -363,10 +364,11 @@ public class DboardController implements Initializable {
        File file = fileChooser.showOpenDialog(stage);
         stage.show();
         stage.close();
+        if(file!=null){
 
         postInputStream = new FileInputStream(file);
         FileInputStream postShowInputStream=new FileInputStream(file);
-        postShowPic.setFill(new ImagePattern(new Image(postShowInputStream)));
+        postShowPic.setFill(new ImagePattern(new Image(postShowInputStream)));}
 
 
     }
