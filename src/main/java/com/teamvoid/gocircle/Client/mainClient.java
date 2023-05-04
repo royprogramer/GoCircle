@@ -8,7 +8,8 @@ import javafx.stage.Stage;
 
 public class mainClient extends Application {
     public void start(Stage stage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/clientScreen.fxml"));
+       FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/clientScreen.fxml"));
+      //  FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/chatbox.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
 

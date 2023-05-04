@@ -19,7 +19,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="770.0" prefWidth="1200.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teamvoid.gocircle.LoginregiController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="770.0" prefWidth="1200.0" style="-fx-background-color: #000000; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teamvoid.gocircle.LoginregiController">
    <children>
       <Circle fx:id="Circle" layoutX="600.0" layoutY="472.0" radius="844.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
          <fill>
@@ -32,15 +32,15 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="0.09448099136352539" green="0.43421053886413574" blue="0.4285483658313751" />
+                        <Color red="0.22368420660495758" green="0.14035087823867798" blue="0.4736842215061188" />
                      </color>
                   </Stop>
                </stops>
             </LinearGradient>
          </fill>
       </Circle>
-      <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="742.0" prefWidth="1172.0" style="-fx-background-color: #000000;" />
-      <Pane fx:id="layer1" layoutX="14.0" layoutY="14.0" prefHeight="742.0" prefWidth="586.0" style="-fx-background-color: #000000;">
+      <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="742.0" prefWidth="1172.0" style="-fx-background-color: #000000; -fx-background-radius: 15;" />
+      <Pane fx:id="layer1" layoutX="14.0" layoutY="14.0" prefHeight="742.0" prefWidth="586.0" style="-fx-background-color: #000000; -fx-background-radius: 15 0 0 15;">
          <children>
             <Circle fx:id="Circle1" layoutX="44.0" layoutY="49.0" radius="28.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
                <fill>
@@ -118,7 +118,7 @@
                   <Font size="16.0" />
                </font>
             </PasswordField>
-            <JFXButton fx:id="loginButton" buttonType="RAISED" layoutX="118.0" layoutY="427.0" onAction="#loginbtn" prefHeight="45.0" prefWidth="345.0" ripplerFill="#251eb2" style="-fx-background-color: #04CA96; -fx-background-radius: 10;" text="Log in" textAlignment="CENTER" textFill="WHITE">
+            <JFXButton fx:id="loginButton" buttonType="RAISED" layoutX="118.0" layoutY="427.0" onAction="#loginbtn" prefHeight="45.0" prefWidth="345.0" ripplerFill="#251eb2" style="-fx-background-color: #9E88DE; -fx-background-radius: 10;" text="Log in" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Concert One" size="23.0" />
                </font>
@@ -137,7 +137,7 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label fx:id="signupPagego" layoutX="337.0" layoutY="483.0" onMouseClicked="#singupPage" prefHeight="21.0" prefWidth="56.0" text="Sign up" textFill="#2febb6" underline="true">
+            <Label fx:id="signupPagego" layoutX="337.0" layoutY="483.0" onMouseClicked="#singupPage" prefHeight="21.0" prefWidth="56.0" text="Sign up" textFill="#cab8ff" underline="true">
                <font>
                   <Font size="15.0" />
                </font>
@@ -145,7 +145,7 @@
                   <Glow level="0.25" />
                </effect>
             </Label>
-            <JFXButton fx:id="signupButton" buttonType="RAISED" layoutX="121.0" layoutY="543.0" onAction="#signUpButton" prefHeight="45.0" prefWidth="345.0" ripplerFill="#251eb2" style="-fx-background-color: #04CA96; -fx-background-radius: 10;" text="Sign up" textAlignment="CENTER" textFill="WHITE">
+            <JFXButton fx:id="signupButton" buttonType="RAISED" layoutX="121.0" layoutY="543.0" onAction="#signUpButton" prefHeight="45.0" prefWidth="345.0" ripplerFill="#251eb2" style="-fx-background-color: #9E88DE; -fx-background-radius: 10;" text="Sign up" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Concert One" size="23.0" />
                </font>
@@ -158,7 +158,7 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label fx:id="loginPagego" layoutX="361.0" layoutY="595.0" onMouseClicked="#loginPage" prefHeight="21.0" prefWidth="56.0" text="Log in" textFill="#2febb6" underline="true">
+            <Label fx:id="loginPagego" layoutX="361.0" layoutY="595.0" onMouseClicked="#loginPage" prefHeight="21.0" prefWidth="56.0" text="Log in" textFill="#cab8ff" underline="true">
                <font>
                   <Font size="15.0" />
                </font>
@@ -186,7 +186,7 @@
                </font>
             </Label>
          </children></Pane>
-      <Pane fx:id="layer2" layoutX="600.0" layoutY="14.0" prefHeight="742.0" prefWidth="586.0" style="-fx-background-color: #000000;">
+      <Pane fx:id="layer2" layoutX="600.0" layoutY="14.0" prefHeight="742.0" prefWidth="586.0" style="-fx-background-color: #000000; -fx-background-radius: 0 15 150;">
          <children>
             <ImageView fitHeight="641.0" fitWidth="508.0" layoutX="45.0" layoutY="51.0">
                <image>

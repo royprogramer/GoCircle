@@ -160,7 +160,8 @@ public class LoginregiController implements Initializable {
 
         signinLabel.setVisible(true);
         userName.setVisible(true);
-        password.setVisible(true);
+
+          password.setVisible(true);
         icon1.setVisible(true);
         icon2.setVisible(true);
         loginButton.setVisible(true);
@@ -178,8 +179,15 @@ public class LoginregiController implements Initializable {
         ResultSet resultSet= statement.executeQuery(verify);
         while (resultSet.next()) {
             if (resultSet.getInt(1) == 1) {
-                Parent root = FXMLLoader.load(getClass().getResource("fxml/dashboard.fxml"));
+                username= userName.getText();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/dboard.fxml"));
+
+                Parent root = loader.load();
+                DboardController dboardController =loader.getController();
+                dboardController.setData(username);
+
                 Scene scene3 = new Scene(root);
+
 
                 Stage stage3 = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
@@ -218,10 +226,10 @@ public class LoginregiController implements Initializable {
                         verificationCode = emailVerification.verificationCode;
 
 
-                        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/verification.fxml"));
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/VarificationPopUp.fxml"));
                         Parent root = loader.load();
-                        VerificationController verificationController = loader.getController();
-                        verificationController.setData(username, versityMail, passWord, verificationCode);
+                        VerificationPopUpController verificationPopUpController = loader.getController();
+                        verificationPopUpController.setData(username, versityMail, passWord, verificationCode);
                         Scene scene = new Scene(root);
                         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                         stage.setScene(scene);
@@ -338,47 +346,6 @@ public class LoginregiController implements Initializable {
 
         DatabaseConnection connectNow= new DatabaseConnection();
         connect= connectNow.getConnect();
-
-    }
-
-    public void varify(MouseEvent mouseEvent) {
-        try{
-            System.out.println("verify ="+verificationCode);
-
-            if(verify_code.getText().equals(verificationCode))
-            {
-                Statement statement = connect.createStatement();
-                String inputInfo = "INSERT INTO `students_info` (`Username`, `Versity_mail`, `Password`) VALUES ('" + userName + "', '" + versityMail + "', '" + password + "')";
-                statement.executeUpdate(inputInfo);
-                System.out.println("Successful Insert");
-                Parent root = FXMLLoader.load(getClass().getResource("fxml/test.fxml"));
-                Scene scene1 = new Scene(root);
-                Stage stage1 = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-                stage1.setScene(scene1);
-                stage1.show();
-
-            }
-            else{
-                warnningMassage.setText("Wrong Verification Code");
-            }
-
-
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-            System.out.println("From verify mouse event");
-        }
-
-
-    }
-
-    public void resend(MouseEvent mouseEvent) {
-        emailVerification =new EmailVerification(versityMail,username);
-        verificationCode= emailVerification.verificationCode;
-
-
-        warnningMassage.setText("Code resend");
     }
 }
 

@@ -14,10 +14,7 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
 
         this.stage = stage;
-        //FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/home.fxml"));
-     // FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/frontPage.fxml"));
-       // FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/dfg.fxml"));
-       FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/profile.fxml"));
+      FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/dfg.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
         stage.initStyle(StageStyle.UNDECORATED);
