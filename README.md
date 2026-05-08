@@ -36,3 +36,11 @@ Make sure you have the following installed on your machine:
 ```bash
 git clone [https://github.com/royprogramer/GoCircle.git](https://github.com/royprogramer/GoCircle.git)
 cd GoCircle
+### 2. Configure Environment Variables
+Copy the template configuration to setup your local environment. Create/edit the .env file in the root directory:
+```bash
+DB_HOST=localhost
+DB_PORT=3306
+DB_NAME=gocircle_db
+DB_USER=your_database_username
+DB_PASSWORD=your_database_password
